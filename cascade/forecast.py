@@ -27,7 +27,18 @@ SEVERE = 0.40
 
 
 def _matrix(rows, columns, names):
-    return np.asarray([[({"ATL": 0, "DEN": 1, "DFW": 2, "ORD": 3}[r[columns.index(n)]] if n == "airport" else float(r[columns.index(n)])) if r[columns.index(n)] is not None else np.nan for n in names] for r in rows], dtype=float)
+    airport_codes = {"ATL": 0, "DEN": 1, "DFW": 2, "ORD": 3}
+    positions = None
+    matrix = []
+    for row in rows:
+        if positions is None:
+            positions = [(name, columns.index(name)) for name in names]
+        values = []
+        for name, index in positions:
+            value = row[index]
+            values.append(np.nan if value is None else airport_codes[value] if name == "airport" else float(value))
+        matrix.append(values)
+    return np.asarray(matrix, dtype=float)
 
 
 def chronological_mask(times, start, end, purge=True, available_at=None, require_available=True):
