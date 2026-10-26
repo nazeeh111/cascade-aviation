@@ -1,0 +1,8 @@
+{
+  "snapshot_id": "a7fe6dfc66e0a3d1",
+  "model_run": "forecast-942079de11e2",
+  "days": 3,
+  "cutoffs": 51,
+  "bytes": 2478278,
+  "demo_sha256": "f66a200b796bc73e3a2ae4a93bb8ecff3a30f5ccebeed4ca7197124dad8e1683"
+}

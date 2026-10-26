@@ -1,0 +1,37 @@
+{
+  "scope": "Last seven UTC days of grid; both joins see the complete weather history. Three warm repeated runs after EXPLAIN ANALYZE. Separate database connections per alternative; peak buffer memory is connection high-water mark including its EXPLAIN, not incremental allocation.",
+  "hardware": "macOS-26.6.2-arm64-arm-64bit",
+  "duckdb_version": "1.5.6",
+  "results": [
+    {
+      "name": "before",
+      "rows": 676,
+      "result_sha256": "03f22b021324fe63735513ea78f68b20c7a27a5cf679d5369ddc2c3e493a42a4",
+      "median_seconds": 0.1455673329764977,
+      "timings_seconds": [
+        0.15010450000409037,
+        0.1455673329764977,
+        0.14183862507343292
+      ],
+      "peak_buffer_bytes": 71360512,
+      "peak_temp_disk_bytes": 0,
+      "query": "-- Baseline: inequality join materializes all eligible preceding reports, then ranks.\nselect airport,cutoff,observed_at,visibility from (\n  select h.airport,h.cutoff,w.observed_at,w.visibility,\n    row_number() over(partition by h.airport,h.cutoff order by w.available_at desc) as rn\n  from (SELECT * FROM int_airport_hours WHERE cutoff >= TIMESTAMP '2025-01-01 23:00:00' - INTERVAL '7 days') h left join weather w\n  on h.airport=w.airport and h.cutoff>=w.available_at\n) where rn=1 order by airport,cutoff;\n"
+    },
+    {
+      "name": "after",
+      "rows": 676,
+      "result_sha256": "03f22b021324fe63735513ea78f68b20c7a27a5cf679d5369ddc2c3e493a42a4",
+      "median_seconds": 0.06753537501208484,
+      "timings_seconds": [
+        0.0794683339772746,
+        0.06753537501208484,
+        0.03729650005698204
+      ],
+      "peak_buffer_bytes": 62996672,
+      "peak_temp_disk_bytes": 0,
+      "query": "-- Optimized: ASOF operator selects exactly one preceding report without the fan-out.\nselect h.airport,h.cutoff,w.observed_at,w.visibility\nfrom (SELECT * FROM int_airport_hours WHERE cutoff >= TIMESTAMP '2025-01-01 23:00:00' - INTERVAL '7 days') h asof left join weather w\non h.airport=w.airport and h.cutoff>=w.available_at\norder by h.airport,h.cutoff;\n"
+    }
+  ],
+  "identical_results": true,
+  "speedup": 2.1554234791833133
+}

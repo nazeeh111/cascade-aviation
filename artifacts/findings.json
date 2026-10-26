@@ -1,0 +1,47 @@
+[
+  {
+    "chart": "missingness.png",
+    "question": "Which observations disappear from delay averages?",
+    "denominator": "1,619,420 reported flights touching four hubs.",
+    "finding": "24,539 arrival delays are missing (1.52%); 20,229 flights are cancelled. 881,126 departures have negative delay.",
+    "limitation": "Missingness categories overlap. Delay observations exclude many cancelled/diverted flights, and this selected subnetwork is not the US system.",
+    "implication": "Show cancellation rates alongside signed observed delays; never replace missing arrival delay with zero.",
+    "sql": "sql/eda.sql"
+  },
+  {
+    "chart": "seasonality.png",
+    "question": "How much does disruption change by month?",
+    "denominator": "841,926 selected-carrier departures from four hubs, grouped by reporting month.",
+    "finding": "Month 7 has 38.5% disrupted departures versus 14.8% in month 10.",
+    "limitation": "One reporting year and changing carrier/airport schedules cannot establish a stable long-run seasonal pattern.",
+    "implication": "Evaluate against seasonal baselines and chronological holdouts; avoid random train/test splits.",
+    "sql": "sql/eda.sql"
+  },
+  {
+    "chart": "cohorts.png",
+    "question": "How much do airport/carrier cohorts differ?",
+    "denominator": "841,926 hub-origin scheduled departures; cells include their actual cohort schedules.",
+    "finding": "DFW/AA has 35.3% disruption (n=166,286), versus 18.1% for DEN/DL (n=12,439).",
+    "limitation": "These unadjusted groups differ in routes, schedule times and exposure. They do not establish carrier quality or causal airport effects.",
+    "implication": "Compare within cohorts and include airport identity and schedule workload in the forecast; preserve the scope denominator.",
+    "sql": "sql/eda.sql"
+  },
+  {
+    "chart": "rotation_association.png",
+    "question": "Do late inbound aircraft coincide with late following departures?",
+    "denominator": "724,524 validated adjacent observed-tail hub-turn links with reported preceding arrival and following departure delays.",
+    "finding": "previous arrival <15 min late: 12.7% following departures late (n=590,930); previous arrival >=15 min late: 56.8% following departures late (n=133,594).",
+    "limitation": "Retrospective same-tail continuity omits flights at nonhub turns, overnight turns, missing tails, crews and passenger connections. Association is not a causal effect.",
+    "implication": "Use validated chains for retrospective diagnosis; deployable forecasts must use only cutoff-available network state, not future aircraft assignments.",
+    "sql": "sql/eda.sql"
+  },
+  {
+    "chart": "weather_association.png",
+    "question": "Does recent visibility separate disruption risk?",
+    "denominator": "28,471 airport cutoffs with accepted visibility, weather age \u22643h, and a complete target; overlapping two-hour exposures.",
+    "finding": "visibility <5 km: 35.9% disruption (n=1,056 cutoffs); visibility >=5 km: 24.5% disruption (n=27,415 cutoffs).",
+    "limitation": "Unadjusted association confounds seasonality, hubs and storms. Hourly two-hour windows overlap; NOAA publication time is assumed observation time plus one hour.",
+    "implication": "Use recent weather as a candidate feature and verify added value on chronological holdouts before making operational claims.",
+    "sql": "sql/eda.sql"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "desktop": {
+    "cutoff": true,
+    "airport": true,
+    "heldoutDay": true,
+    "zeroBudget": true,
+    "consoleErrors": []
+  },
+  "narrowViewport": {
+    "mediaMatches": true,
+    "panelWidth": 358.8125,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "mobileCaptureLimitation": "In-app browser screenshot scaling did not reliably represent emulated viewport; narrow layout checked from rendered DOM bounds."
+}

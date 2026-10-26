@@ -1,0 +1,50 @@
+{
+  "bytes": 28540589,
+  "cache_reused": false,
+  "content_type": "application/x-zip-compressed",
+  "etag": "\"801d8f8bfd9da1:0\"",
+  "grain": "one source reported scheduled flight before downstream deduplication",
+  "last_modified": "Thu, 18 Jul 2024 12:39:35 GMT",
+  "member": "On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_4.csv",
+  "month": 4,
+  "parquet_bytes": 1731221,
+  "parquet_path": "data/flights/year=2024/month=04/part.parquet",
+  "parquet_sha256": "0d4e3b378d2f6f441651c25abbc32d5c4faabae243ad579b66db30c79753abfd",
+  "resolved_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2024_4.zip",
+  "retrieved_at": "2026-10-26T01:56:58.130185+00:00",
+  "schema_version": 1,
+  "scope_airports": [
+    "ATL",
+    "ORD",
+    "DFW",
+    "DEN"
+  ],
+  "scope_carriers": [
+    "AA",
+    "DL",
+    "UA",
+    "WN"
+  ],
+  "seconds": 137.409,
+  "selected_nonnull_counts": {
+    "arr_delay": 131914,
+    "cancelled": 132968,
+    "dep_delay": 132206,
+    "distance": 132968,
+    "diverted": 132968
+  },
+  "selected_rows": 132968,
+  "selected_sums": {
+    "arr_delay": 901430.0,
+    "cancelled": 791.0,
+    "dep_delay": 1565663.0,
+    "distance": 115870712.0,
+    "diverted": 263.0
+  },
+  "sha256": "d8b1e88626a7375d351962917fe5ec132660c1636dc8b91f778627c769e0e15a",
+  "source_rows": 582185,
+  "source_snapshot": "bts-2024-04-d8b1e88626a7",
+  "uncompressed_bytes": 263178177,
+  "url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2024_4.zip",
+  "year": 2024
+}

@@ -1,0 +1,9 @@
+{
+  "seconds": 12.713538124924526,
+  "mode": "quickstart",
+  "raw_flights": 28260,
+  "flights": 28260,
+  "weather": 1371,
+  "features": 764,
+  "database_bytes": 9449472
+}

@@ -1,0 +1,14 @@
+{
+  "forecast_run_id": "forecast-942079de11e2",
+  "simulation_run_id": "simulation-e313548d03ae",
+  "forecast_source_hash_matches": true,
+  "simulator_source_hash_matches": true,
+  "prediction_rows": 23020,
+  "bulk_storage_preserved_all_prediction_values": true,
+  "comparison": "PyArrow tables sorted by airport,cutoff,model; all9 columns except changed run_id are exactly equal",
+  "prediction_values_sha256": "94ba1bea669253a3c2a89c2ed105abb788efd04b5908cff46d9e7eb04c649e80",
+  "value_hash_method": "sha256(repr(DuckDB sorted prediction rows excludingrun_id))",
+  "forecast_and_simulator_owned_tests_passed": 12,
+  "final_forecast_wall_seconds": 112.87597762502264,
+  "final_simulator_wall_seconds": 10.31282920797821
+}

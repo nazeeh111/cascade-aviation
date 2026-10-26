@@ -1,0 +1,577 @@
+{
+  "run_id": "simulation-e313548d03ae",
+  "code_sha256": "93721720323c4ccd694f12d5f1f9390cd6da7d7405540a4b4b355148f57962cc",
+  "source_manifest_sha256": {
+    "airports.json": "d1b146c08d3f0b7e5e9897234446b50fd20055acd3c5682e4a452844a39630ad",
+    "bts-2024-01.json": "74fdd141910cb977b6f5ef6ad1e6572f29b27c2f0352fd9eda512e9ead2563ed",
+    "bts-2024-02.json": "4b32409d904dee62550d82b63530a12d4f4d282fba29116bef58c213ab2ff5e9",
+    "bts-2024-03.json": "e9706e1ea25cd277243537f877603fdf351122d7ae88d5405a0069f696f55b1f",
+    "bts-2024-04.json": "1a3cd7a02d23d23da1b40a18d4a4d14f5ca6dfa828d198a82b54c42f0be5acb8",
+    "bts-2024-05.json": "61e464039877b363102d726290055157dbb1375adb275d1ee7fe0af7d4b63047",
+    "bts-2024-06.json": "a74416d30ed491146320e38dce374e5baa5ecc0482f3aff7a0be5f96e0d7bcce",
+    "bts-2024-07.json": "cae03a0cd64562de23b225ffc3711809f5d2e446a6f2e63ea39ec2740fd45509",
+    "bts-2024-08.json": "d2ecead1ff238aa16fb30a8a23895a107b98fceea85813dccccf3bd40f974b24",
+    "bts-2024-09.json": "81e34a460370754edf5e95631eb5a9ecd790b8a5acd836645b3407ea44191df6",
+    "bts-2024-10.json": "d9ecf0a508351b64da14228ba22b39ddd1ef86b313d34d4403fdc72afb88e14f",
+    "bts-2024-11.json": "fc2dc5a38628ed6d83b220224ee00332183df4db640fbe97a735c2c213bd4d24",
+    "bts-2024-12.json": "e3866a2ecd0c747c77a7915213858a24f19f2c69d7f4eb9943f68510179366f6",
+    "noaa-2024-72219013874.json": "adbbbe835b4bb56bd6f965dba70f7bf4591da026c9ad6cb3012748bb57cf4fc2",
+    "noaa-2024-72259003927.json": "a62de6a28f6cf2c48d4109e9d1bde82a506eee5559d8ad70d4d4de3eba40f96d",
+    "noaa-2024-72530094846.json": "46e440401dfb32ccbfbe409b80bd296bbea65cce253f5776062a726b4bfd4ff6",
+    "noaa-2024-72565003017.json": "b641b25f0e37a73958395b71b12cb8af9a9d7182547e6fc48b1f06dae59c2ae2"
+  },
+  "forecast_run_ids": [
+    "forecast-942079de11e2"
+  ],
+  "model": "nonnegative recent-state regression plus one-hop time-bounded scheduled-network pressure",
+  "horizon_hours": 4,
+  "forecast_signal_horizon_hours": 2,
+  "turn_buffer_minutes": 45,
+  "airports": [
+    "ATL",
+    "DEN",
+    "DFW",
+    "ORD"
+  ],
+  "forecast_policy_model": "tabular",
+  "train_end_exclusive": "2024-10-01",
+  "heldout_start": "2024-11-01",
+  "heldout_end_exclusive": "2025-01-01",
+  "purge_hours": 4,
+  "label_availability_filter": "target_available_at < Oct1 for training; departures +1h, cancellation schedule+24h proxy",
+  "calibration_candidates": [
+    {
+      "coupling": 0.0,
+      "coefficients": [
+        7.1991615251988526,
+        0.0,
+        51.16521976034221,
+        11.675849719698006
+      ],
+      "training_rmse": 1941.4359206895313
+    },
+    {
+      "coupling": 0.1,
+      "coefficients": [
+        7.185373764827129,
+        0.0,
+        51.15869629540309,
+        11.61552473287743
+      ],
+      "training_rmse": 1941.1586032652378
+    },
+    {
+      "coupling": 0.2,
+      "coefficients": [
+        7.171623570830172,
+        0.0,
+        51.15211489814514,
+        11.555251057806439
+      ],
+      "training_rmse": 1940.886102965362
+    },
+    {
+      "coupling": 0.3,
+      "coefficients": [
+        7.157910899273237,
+        0.0,
+        51.14547575144629,
+        11.495029629990384
+      ],
+      "training_rmse": 1940.6183882565454
+    }
+  ],
+  "selected_calibration": {
+    "coupling": 0.3,
+    "coefficients": [
+      7.157910899273237,
+      0.0,
+      51.14547575144629,
+      11.495029629990384
+    ],
+    "training_rmse": 1940.6183882565454
+  },
+  "replay": {
+    "n_airport_intervals": 4092,
+    "n_network_cutoffs": 1023,
+    "n_days": 61,
+    "mae_delay_minutes": 920.0031600960259,
+    "rmse_delay_minutes": 1775.3488152627142,
+    "bias_delay_minutes": 286.40282316960304,
+    "actual_mean_delay_minutes": 1698.8431085043987,
+    "simulated_mean_delay_minutes": 1985.245931674002
+  },
+  "day_errors": [
+    {
+      "date": "2024-11-01",
+      "mae_delay_minutes": 803.4915749824761
+    },
+    {
+      "date": "2024-11-02",
+      "mae_delay_minutes": 651.9612196355075
+    },
+    {
+      "date": "2024-11-03",
+      "mae_delay_minutes": 956.7753372475123
+    },
+    {
+      "date": "2024-11-04",
+      "mae_delay_minutes": 1781.9578928609826
+    },
+    {
+      "date": "2024-11-05",
+      "mae_delay_minutes": 1156.7508900486519
+    },
+    {
+      "date": "2024-11-06",
+      "mae_delay_minutes": 751.0567351448326
+    },
+    {
+      "date": "2024-11-07",
+      "mae_delay_minutes": 768.3159581286043
+    },
+    {
+      "date": "2024-11-08",
+      "mae_delay_minutes": 1049.612511204096
+    },
+    {
+      "date": "2024-11-09",
+      "mae_delay_minutes": 875.5572559189619
+    },
+    {
+      "date": "2024-11-10",
+      "mae_delay_minutes": 602.915237429123
+    },
+    {
+      "date": "2024-11-11",
+      "mae_delay_minutes": 772.3801068854694
+    },
+    {
+      "date": "2024-11-12",
+      "mae_delay_minutes": 720.9472869324843
+    },
+    {
+      "date": "2024-11-13",
+      "mae_delay_minutes": 772.683236619561
+    },
+    {
+      "date": "2024-11-14",
+      "mae_delay_minutes": 782.4855484774874
+    },
+    {
+      "date": "2024-11-15",
+      "mae_delay_minutes": 569.3274484014061
+    },
+    {
+      "date": "2024-11-16",
+      "mae_delay_minutes": 808.4262889975857
+    },
+    {
+      "date": "2024-11-17",
+      "mae_delay_minutes": 739.8173979167236
+    },
+    {
+      "date": "2024-11-18",
+      "mae_delay_minutes": 1391.3749448243198
+    },
+    {
+      "date": "2024-11-19",
+      "mae_delay_minutes": 767.4599120084455
+    },
+    {
+      "date": "2024-11-20",
+      "mae_delay_minutes": 700.2011958727138
+    },
+    {
+      "date": "2024-11-21",
+      "mae_delay_minutes": 1008.2216980571507
+    },
+    {
+      "date": "2024-11-22",
+      "mae_delay_minutes": 722.8501630017317
+    },
+    {
+      "date": "2024-11-23",
+      "mae_delay_minutes": 736.1849215795091
+    },
+    {
+      "date": "2024-11-24",
+      "mae_delay_minutes": 700.8974364573992
+    },
+    {
+      "date": "2024-11-25",
+      "mae_delay_minutes": 739.604503384583
+    },
+    {
+      "date": "2024-11-26",
+      "mae_delay_minutes": 702.0605834823307
+    },
+    {
+      "date": "2024-11-27",
+      "mae_delay_minutes": 818.924496999444
+    },
+    {
+      "date": "2024-11-28",
+      "mae_delay_minutes": 613.9514838529259
+    },
+    {
+      "date": "2024-11-29",
+      "mae_delay_minutes": 645.4778432767852
+    },
+    {
+      "date": "2024-11-30",
+      "mae_delay_minutes": 645.1677387852234
+    },
+    {
+      "date": "2024-12-01",
+      "mae_delay_minutes": 847.8977132524353
+    },
+    {
+      "date": "2024-12-02",
+      "mae_delay_minutes": 860.6878293478884
+    },
+    {
+      "date": "2024-12-03",
+      "mae_delay_minutes": 673.813771873722
+    },
+    {
+      "date": "2024-12-04",
+      "mae_delay_minutes": 757.2335480431445
+    },
+    {
+      "date": "2024-12-05",
+      "mae_delay_minutes": 608.9208169419309
+    },
+    {
+      "date": "2024-12-06",
+      "mae_delay_minutes": 803.2767551230314
+    },
+    {
+      "date": "2024-12-07",
+      "mae_delay_minutes": 780.8986455533004
+    },
+    {
+      "date": "2024-12-08",
+      "mae_delay_minutes": 735.9534512141354
+    },
+    {
+      "date": "2024-12-09",
+      "mae_delay_minutes": 566.2531432410676
+    },
+    {
+      "date": "2024-12-10",
+      "mae_delay_minutes": 626.2154022109474
+    },
+    {
+      "date": "2024-12-11",
+      "mae_delay_minutes": 615.8352475794021
+    },
+    {
+      "date": "2024-12-12",
+      "mae_delay_minutes": 872.2600884498288
+    },
+    {
+      "date": "2024-12-13",
+      "mae_delay_minutes": 799.9970870465733
+    },
+    {
+      "date": "2024-12-14",
+      "mae_delay_minutes": 682.4538608897997
+    },
+    {
+      "date": "2024-12-15",
+      "mae_delay_minutes": 622.5318181958879
+    },
+    {
+      "date": "2024-12-16",
+      "mae_delay_minutes": 1326.6443060129366
+    },
+    {
+      "date": "2024-12-17",
+      "mae_delay_minutes": 961.3563099007001
+    },
+    {
+      "date": "2024-12-18",
+      "mae_delay_minutes": 964.1520524861793
+    },
+    {
+      "date": "2024-12-19",
+      "mae_delay_minutes": 745.3720086832919
+    },
+    {
+      "date": "2024-12-20",
+      "mae_delay_minutes": 1456.2298667289742
+    },
+    {
+      "date": "2024-12-21",
+      "mae_delay_minutes": 932.7386299851763
+    },
+    {
+      "date": "2024-12-22",
+      "mae_delay_minutes": 633.0902424635955
+    },
+    {
+      "date": "2024-12-23",
+      "mae_delay_minutes": 749.7358591895561
+    },
+    {
+      "date": "2024-12-24",
+      "mae_delay_minutes": 4456.3702252827425
+    },
+    {
+      "date": "2024-12-25",
+      "mae_delay_minutes": 864.9987752387225
+    },
+    {
+      "date": "2024-12-26",
+      "mae_delay_minutes": 1108.6378699824036
+    },
+    {
+      "date": "2024-12-27",
+      "mae_delay_minutes": 1096.389375500868
+    },
+    {
+      "date": "2024-12-28",
+      "mae_delay_minutes": 1452.6073855432587
+    },
+    {
+      "date": "2024-12-29",
+      "mae_delay_minutes": 1788.0251639216478
+    },
+    {
+      "date": "2024-12-30",
+      "mae_delay_minutes": 1114.8113813669881
+    },
+    {
+      "date": "2024-12-31",
+      "mae_delay_minutes": 704.920129741006
+    }
+  ],
+  "policies": [
+    {
+      "policy": "demand",
+      "budget": 0,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "equal",
+      "budget": 0,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "forecast_aware",
+      "budget": 0,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "no_action",
+      "budget": 0,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "recent_stress",
+      "budget": 0,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "demand",
+      "budget": 1,
+      "mean_simulated_minutes_per_airport_interval": 1891.4131932284718,
+      "mean_simulated_reduction_per_airport_interval": 93.83273844553189
+    },
+    {
+      "policy": "equal",
+      "budget": 1,
+      "mean_simulated_minutes_per_airport_interval": 1892.4381851884532,
+      "mean_simulated_reduction_per_airport_interval": 92.80774648555243
+    },
+    {
+      "policy": "forecast_aware",
+      "budget": 1,
+      "mean_simulated_minutes_per_airport_interval": 1879.6181044741957,
+      "mean_simulated_reduction_per_airport_interval": 105.62782719980484
+    },
+    {
+      "policy": "no_action",
+      "budget": 1,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "recent_stress",
+      "budget": 1,
+      "mean_simulated_minutes_per_airport_interval": 1880.499998092121,
+      "mean_simulated_reduction_per_airport_interval": 104.74593358187964
+    },
+    {
+      "policy": "demand",
+      "budget": 2,
+      "mean_simulated_minutes_per_airport_interval": 1813.185546857125,
+      "mean_simulated_reduction_per_airport_interval": 172.06038481687628
+    },
+    {
+      "policy": "equal",
+      "budget": 2,
+      "mean_simulated_minutes_per_airport_interval": 1815.8250298326145,
+      "mean_simulated_reduction_per_airport_interval": 169.4209018413887
+    },
+    {
+      "policy": "forecast_aware",
+      "budget": 2,
+      "mean_simulated_minutes_per_airport_interval": 1787.1831717783855,
+      "mean_simulated_reduction_per_airport_interval": 198.06275989561695
+    },
+    {
+      "policy": "no_action",
+      "budget": 2,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "recent_stress",
+      "budget": 2,
+      "mean_simulated_minutes_per_airport_interval": 1791.6899394661896,
+      "mean_simulated_reduction_per_airport_interval": 193.55599220781357
+    },
+    {
+      "policy": "demand",
+      "budget": 3,
+      "mean_simulated_minutes_per_airport_interval": 1736.7792790429041,
+      "mean_simulated_reduction_per_airport_interval": 248.46665263109455
+    },
+    {
+      "policy": "equal",
+      "budget": 3,
+      "mean_simulated_minutes_per_airport_interval": 1738.0452687264342,
+      "mean_simulated_reduction_per_airport_interval": 247.200662947564
+    },
+    {
+      "policy": "forecast_aware",
+      "budget": 3,
+      "mean_simulated_minutes_per_airport_interval": 1710.3707987196524,
+      "mean_simulated_reduction_per_airport_interval": 274.8751329543493
+    },
+    {
+      "policy": "no_action",
+      "budget": 3,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "recent_stress",
+      "budget": 3,
+      "mean_simulated_minutes_per_airport_interval": 1716.0883078060574,
+      "mean_simulated_reduction_per_airport_interval": 269.15762386794336
+    },
+    {
+      "policy": "demand",
+      "budget": 4,
+      "mean_simulated_minutes_per_airport_interval": 1676.687254437744,
+      "mean_simulated_reduction_per_airport_interval": 308.55867723625965
+    },
+    {
+      "policy": "equal",
+      "budget": 4,
+      "mean_simulated_minutes_per_airport_interval": 1687.4590419229,
+      "mean_simulated_reduction_per_airport_interval": 297.78688975110055
+    },
+    {
+      "policy": "forecast_aware",
+      "budget": 4,
+      "mean_simulated_minutes_per_airport_interval": 1640.6141899669856,
+      "mean_simulated_reduction_per_airport_interval": 344.6317417070158
+    },
+    {
+      "policy": "no_action",
+      "budget": 4,
+      "mean_simulated_minutes_per_airport_interval": 1985.2459316740037,
+      "mean_simulated_reduction_per_airport_interval": 0.0
+    },
+    {
+      "policy": "recent_stress",
+      "budget": 4,
+      "mean_simulated_minutes_per_airport_interval": 1647.8432799780123,
+      "mean_simulated_reduction_per_airport_interval": 337.4026516959896
+    }
+  ],
+  "sensitivity": [
+    {
+      "coupling": 0.0,
+      "relief": 0.05,
+      "mean_simulated_reduction_minutes_per_interval": 378.36102761533095
+    },
+    {
+      "coupling": 0.0,
+      "relief": 0.15,
+      "mean_simulated_reduction_minutes_per_interval": 1094.7654634612502
+    },
+    {
+      "coupling": 0.0,
+      "relief": 0.3,
+      "mean_simulated_reduction_minutes_per_interval": 2085.785243488521
+    },
+    {
+      "coupling": 0.15,
+      "relief": 0.05,
+      "mean_simulated_reduction_minutes_per_interval": 379.1703880210242
+    },
+    {
+      "coupling": 0.15,
+      "relief": 0.15,
+      "mean_simulated_reduction_minutes_per_interval": 1097.154125775162
+    },
+    {
+      "coupling": 0.15,
+      "relief": 0.3,
+      "mean_simulated_reduction_minutes_per_interval": 2090.351717901157
+    },
+    {
+      "coupling": 0.3,
+      "relief": 0.05,
+      "mean_simulated_reduction_minutes_per_interval": 379.9206722002153
+    },
+    {
+      "coupling": 0.3,
+      "relief": 0.15,
+      "mean_simulated_reduction_minutes_per_interval": 1099.500531817398
+    },
+    {
+      "coupling": 0.3,
+      "relief": 0.3,
+      "mean_simulated_reduction_minutes_per_interval": 2094.9716025699513
+    }
+  ],
+  "budget": {
+    "default": 3,
+    "allowed": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "per_airport_cap": 2
+  },
+  "resource_assumption": "One abstract unit reduces exogenous airport departure-delay pressure by 15%; each further unit compounds. This percentage is hypothetical, not an empirical effect or a real crew/aircraft resource.",
+  "edge_query": "WITH departures AS (\n      SELECT origin,dest,sched_dep_utc,sched_arr_utc FROM flights\n      WHERE origin IN ('ATL','DEN','DFW','ORD') AND sched_dep_utc IS NOT NULL\n    ), expanded AS (\n      SELECT d.*,date_trunc('hour',d.sched_dep_utc)-r.k*INTERVAL 1 HOUR AS cutoff\n      FROM departures d CROSS JOIN range(4) r(k)\n    ) SELECT e.cutoff,e.origin,e.dest,count(*) AS n,\n        count(*) FILTER(WHERE e.sched_arr_utc+INTERVAL 45 MINUTE <= e.cutoff+INTERVAL 4 HOUR) AS transmissions\n      FROM expanded e JOIN (SELECT DISTINCT cutoff FROM airport_hour_features) h USING(cutoff)\n      GROUP BY e.cutoff,e.origin,e.dest",
+  "label_query": "WITH label4 AS (\n    SELECT airport,cutoff,\n      sum(scheduled_hour) OVER future AS scheduled,\n      sum(stressed_hour) OVER future AS stressed,\n      sum(unlabelled_hour) OVER future AS unknown_labels,\n      sum(delay_minutes_hour) OVER future AS target_delay_minutes,\n      max(label_available_at) OVER future AS target_available_at,\n      count(*) OVER future AS label_hours\n    FROM int_airport_hours\n    WINDOW future AS (PARTITION BY airport ORDER BY cutoff ROWS BETWEEN CURRENT ROW AND 3 FOLLOWING)\n) SELECT h.* EXCLUDE(scheduled,target_rate,target_delay_minutes,target_available_at),\n         s.scheduled,s.stressed/nullif(s.scheduled,0) AS target_rate,\n         s.target_delay_minutes,s.target_available_at\n  FROM airport_hour_features h JOIN label4 s USING(airport,cutoff)\n  WHERE s.scheduled>=3 AND s.unknown_labels=0 AND s.label_hours=4\n  ORDER BY h.cutoff,h.airport",
+  "target": "Sum of positive reported departure-delay minutes for observed noncancelled departures scheduled in next 4h; cancelled flight delay is unobserved and omitted",
+  "overlap": "4h scenario windows at hourly cutoffs overlap; policy averages are per interval and must never be added as daily savings.",
+  "limitations": [
+    "Final reported schedules proxy advance schedules; no historical schedule revisions.",
+    "No passenger, crew, aircraft maintenance, gate, slot, or air-traffic constraints.",
+    "Four hubs and four carriers are a selected subnetwork; external propagation is omitted.",
+    "This aggregate replay validates only delay-pressure fit, not flight-level recovery feasibility.",
+    "Only one hop can transmit pressure, and only scheduled arrival+45min within 4h is eligible. The turn buffer and coupling are hypothetical.",
+    "The allocation policy uses a 2h forecast as a risk signal for a separate 4h scenario; it is not a 4h calibrated forecast.",
+    "Resource and coupling sensitivity are hypothetical. Reported reductions are simulated and not causal savings.",
+    "No future tail assignments or heldout actual outcomes enter the allocation objective.",
+    "Performance on Nov\u2013Dec is reported once and does not tune calibration or resource assumptions."
+  ],
+  "runtime_seconds": 10.145725624985062
+}

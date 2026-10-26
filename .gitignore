@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/flights/
+data/weather/
+data/*.duckdb*
+dbt/target/
+dbt/logs/
+artifacts/*.joblib
+work/
+.DS_Store

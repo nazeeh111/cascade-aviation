@@ -1,0 +1,11 @@
+{
+  "day": "2024-11-15",
+  "label_rows": 86,
+  "labels_identical": true,
+  "old_bounded_seconds": 15.901071124942973,
+  "new_window_seconds": 0.6883736660238355,
+  "edge_cutoffs": 24,
+  "edges_identical": true,
+  "optimized_full_annual_matrix_seconds": 34.50541941693518,
+  "old_full_query": "Interrupted after >120 seconds in initial records range join; no completed full baseline timing claimed."
+}

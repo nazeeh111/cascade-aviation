@@ -1,0 +1,53 @@
+version: 2
+models:
+  - name: dim_carriers
+    description: 'One selected reporting carrier code. Stable display labels; code is the analytical key.'
+    columns:
+      - name: carrier
+        data_tests: [unique, not_null]
+  - name: stg_flights
+    description: 'One final reported scheduled flight. Key flight_id; conflicting natural keys quarantined. UTC timestamps and missingness are explicit.'
+    columns:
+      - name: flight_id
+        data_tests: [unique, not_null]
+      - name: origin
+        data_tests: [not_null]
+      - name: dest
+        data_tests: [not_null]
+      - name: carrier
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_carriers')
+                field: carrier
+          - accepted_values:
+              arguments:
+                values: ['AA', 'DL', 'UA', 'WN']
+  - name: stg_weather
+    description: 'One airport/observation timestamp, quality-filtered NOAA report; assumed available one hour later.'
+    columns:
+      - name: airport
+        data_tests: [not_null]
+      - name: observed_at
+        data_tests: [not_null]
+  - name: int_rotations
+    description: 'One following flight_id with a possible preceding observed same-tail flight. Validated links are retrospective only.'
+    columns:
+      - name: flight_id
+        data_tests:
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_flights')
+                field: flight_id
+  - name: int_airport_hours
+    description: 'One airport/UTC hour. Scheduled outcome buckets and previously reported event counts.'
+  - name: int_network_edges
+    description: 'One cutoff/source/target; prior-28-day scheduled flight weights.'
+  - name: mart_airport_hour_features
+    description: 'One airport/UTC cutoff; two-hour future target and strictly retrospective event/weather features. Feature whitelist in forecast.py.'
+    columns:
+      - name: airport
+        data_tests: [not_null]
+      - name: cutoff
+        data_tests: [not_null]

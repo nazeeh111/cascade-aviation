@@ -1,0 +1,28 @@
+{
+  "description": "Real BTS and NOAA January 15-21 subset; NOAA includes adjacent day buffers.",
+  "files": {
+    "airports.parquet": {
+      "bytes": 230876,
+      "sha256": "568bdde42c26961e47595919a31da13846e3460fc8c36fc89a4884d3af78cfdc"
+    },
+    "flights.parquet": {
+      "bytes": 457567,
+      "sha256": "01d110f0ed9ecb6fa4e70cb29fa5ecb49f1a45ef1a493f1b743a93bea2bbb48c"
+    },
+    "weather.parquet": {
+      "bytes": 24701,
+      "sha256": "49173090f2212b5a0b83f6bb74b73c7338207514a91282bc512cbbbf5c7d3e0a"
+    }
+  },
+  "license_notes": "BTS and NOAA observations: US federal public data, cite agencies; airports: ODbL-1.0/DbCL-1.0, OpenFlights attribution retained. See LICENSE-DATA.md.",
+  "not_suitable_for": "Estimating annual forecasting performance from one week; use full-year rebuild.",
+  "source_manifests": [
+    "data/manifests/bts-2024-01.json",
+    "data/manifests/noaa-2024-72219013874.json",
+    "data/manifests/noaa-2024-72530094846.json",
+    "data/manifests/noaa-2024-72259003927.json",
+    "data/manifests/noaa-2024-72565003017.json",
+    "data/manifests/airports.json"
+  ],
+  "year": 2024
+}

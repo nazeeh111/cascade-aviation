@@ -1,0 +1,1863 @@
+{
+  "scope": "2024 AA/DL/UA/WN flights touching ATL/ORD/DFW/DEN",
+  "queries": "sql/eda.sql",
+  "missingness": {
+    "reported_flights": 1619420,
+    "missing_dep_delay": 19648,
+    "missing_arr_delay": 24539,
+    "cancelled": 20229,
+    "diverted": 4310,
+    "missing_tail": 5280,
+    "early_departures": 881126,
+    "time_exceptions": 1,
+    "arrival_clock_mismatches": 146
+  },
+  "delay_distribution": {
+    "departure_quantiles": [
+      -8.0,
+      -1.0,
+      46.0,
+      86.0,
+      225.0
+    ],
+    "arrival_quantiles": [
+      -22.0,
+      -6.0,
+      45.0,
+      86.0,
+      225.0
+    ],
+    "mean_departure_delay": 14.168770299767717,
+    "mean_arrival_delay": 8.330245955654371
+  },
+  "airport_carrier_month": [
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 1,
+      "scheduled": 549,
+      "cancellation_rate": 0.00546448087431694,
+      "disruption_rate": 0.21493624772313297,
+      "departure_delay_observations": 546,
+      "mean_observed_delay": 12.602564102564102
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 2,
+      "scheduled": 550,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.13818181818181818,
+      "departure_delay_observations": 550,
+      "mean_observed_delay": 12.367272727272727
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 3,
+      "scheduled": 599,
+      "cancellation_rate": 0.02003338898163606,
+      "disruption_rate": 0.2370617696160267,
+      "departure_delay_observations": 587,
+      "mean_observed_delay": 20.05451448040886
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 4,
+      "scheduled": 576,
+      "cancellation_rate": 0.008680555555555556,
+      "disruption_rate": 0.21875,
+      "departure_delay_observations": 572,
+      "mean_observed_delay": 16.856643356643357
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 5,
+      "scheduled": 632,
+      "cancellation_rate": 0.03955696202531646,
+      "disruption_rate": 0.3022151898734177,
+      "departure_delay_observations": 608,
+      "mean_observed_delay": 29.45888157894737
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 6,
+      "scheduled": 744,
+      "cancellation_rate": 0.02956989247311828,
+      "disruption_rate": 0.30913978494623656,
+      "departure_delay_observations": 724,
+      "mean_observed_delay": 39.09668508287293
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 7,
+      "scheduled": 771,
+      "cancellation_rate": 0.029831387808041506,
+      "disruption_rate": 0.36964980544747084,
+      "departure_delay_observations": 748,
+      "mean_observed_delay": 42.61229946524064
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 8,
+      "scheduled": 738,
+      "cancellation_rate": 0.032520325203252036,
+      "disruption_rate": 0.2899728997289973,
+      "departure_delay_observations": 714,
+      "mean_observed_delay": 30.376750700280112
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 9,
+      "scheduled": 709,
+      "cancellation_rate": 0.007052186177715092,
+      "disruption_rate": 0.152327221438646,
+      "departure_delay_observations": 704,
+      "mean_observed_delay": 11.590909090909092
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 10,
+      "scheduled": 724,
+      "cancellation_rate": 0.0055248618784530384,
+      "disruption_rate": 0.1408839779005525,
+      "departure_delay_observations": 720,
+      "mean_observed_delay": 11.218055555555555
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 11,
+      "scheduled": 588,
+      "cancellation_rate": 0.006802721088435374,
+      "disruption_rate": 0.13945578231292516,
+      "departure_delay_observations": 584,
+      "mean_observed_delay": 12.053082191780822
+    },
+    {
+      "origin": "ATL",
+      "carrier": "AA",
+      "month": 12,
+      "scheduled": 537,
+      "cancellation_rate": 0.0111731843575419,
+      "disruption_rate": 0.22532588454376165,
+      "departure_delay_observations": 531,
+      "mean_observed_delay": 22.11487758945386
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 1,
+      "scheduled": 16511,
+      "cancellation_rate": 0.0035128096420568105,
+      "disruption_rate": 0.1746714311671007,
+      "departure_delay_observations": 16456,
+      "mean_observed_delay": 8.69366796305299
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 2,
+      "scheduled": 16185,
+      "cancellation_rate": 0.0002471424158171146,
+      "disruption_rate": 0.10139017608897127,
+      "departure_delay_observations": 16181,
+      "mean_observed_delay": 2.4211729806563254
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 3,
+      "scheduled": 18819,
+      "cancellation_rate": 0.0003719645039587651,
+      "disruption_rate": 0.178011584037409,
+      "departure_delay_observations": 18815,
+      "mean_observed_delay": 7.85740100983258
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 4,
+      "scheduled": 18822,
+      "cancellation_rate": 0.0005312931675698651,
+      "disruption_rate": 0.1610349590904261,
+      "departure_delay_observations": 18815,
+      "mean_observed_delay": 7.445601913366994
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 5,
+      "scheduled": 20022,
+      "cancellation_rate": 0.0033463190490460493,
+      "disruption_rate": 0.23309359704325242,
+      "departure_delay_observations": 19956,
+      "mean_observed_delay": 13.57892363199038
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 6,
+      "scheduled": 20072,
+      "cancellation_rate": 0.0009964129135113591,
+      "disruption_rate": 0.19210840972499005,
+      "departure_delay_observations": 20053,
+      "mean_observed_delay": 8.913628883458834
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 7,
+      "scheduled": 20684,
+      "cancellation_rate": 0.07058596016244441,
+      "disruption_rate": 0.40282343840649776,
+      "departure_delay_observations": 19236,
+      "mean_observed_delay": 31.002079434393846
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 8,
+      "scheduled": 20187,
+      "cancellation_rate": 0.0035171149749839005,
+      "disruption_rate": 0.19626492297022838,
+      "departure_delay_observations": 20116,
+      "mean_observed_delay": 9.723205408629946
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 9,
+      "scheduled": 19151,
+      "cancellation_rate": 0.004699493499033993,
+      "disruption_rate": 0.15623205054566341,
+      "departure_delay_observations": 19064,
+      "mean_observed_delay": 6.0757973143096935
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 10,
+      "scheduled": 19922,
+      "cancellation_rate": 0.008382692500752936,
+      "disruption_rate": 0.1113342033932336,
+      "departure_delay_observations": 19755,
+      "mean_observed_delay": 1.8837762591748923
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 11,
+      "scheduled": 18565,
+      "cancellation_rate": 0.00010772959870724482,
+      "disruption_rate": 0.11742526259089685,
+      "departure_delay_observations": 18563,
+      "mean_observed_delay": 2.2312664978721113
+    },
+    {
+      "origin": "ATL",
+      "carrier": "DL",
+      "month": 12,
+      "scheduled": 18688,
+      "cancellation_rate": 0.0004280821917808219,
+      "disruption_rate": 0.21404109589041095,
+      "departure_delay_observations": 18683,
+      "mean_observed_delay": 9.647487020285821
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 1,
+      "scheduled": 530,
+      "cancellation_rate": 0.062264150943396226,
+      "disruption_rate": 0.20566037735849058,
+      "departure_delay_observations": 497,
+      "mean_observed_delay": 15.885311871227364
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 2,
+      "scheduled": 540,
+      "cancellation_rate": 0.003703703703703704,
+      "disruption_rate": 0.11851851851851852,
+      "departure_delay_observations": 538,
+      "mean_observed_delay": 6.552044609665428
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 3,
+      "scheduled": 554,
+      "cancellation_rate": 0.005415162454873646,
+      "disruption_rate": 0.13176895306859207,
+      "departure_delay_observations": 551,
+      "mean_observed_delay": 5.638838475499092
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 4,
+      "scheduled": 538,
+      "cancellation_rate": 0.0018587360594795538,
+      "disruption_rate": 0.17100371747211895,
+      "departure_delay_observations": 537,
+      "mean_observed_delay": 12.195530726256983
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 5,
+      "scheduled": 634,
+      "cancellation_rate": 0.014195583596214511,
+      "disruption_rate": 0.26813880126182965,
+      "departure_delay_observations": 625,
+      "mean_observed_delay": 19.2784
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 6,
+      "scheduled": 663,
+      "cancellation_rate": 0.013574660633484163,
+      "disruption_rate": 0.22021116138763197,
+      "departure_delay_observations": 656,
+      "mean_observed_delay": 15.902439024390244
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 7,
+      "scheduled": 658,
+      "cancellation_rate": 0.0425531914893617,
+      "disruption_rate": 0.36322188449848025,
+      "departure_delay_observations": 630,
+      "mean_observed_delay": 34.12698412698413
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 8,
+      "scheduled": 686,
+      "cancellation_rate": 0.026239067055393587,
+      "disruption_rate": 0.22011661807580174,
+      "departure_delay_observations": 668,
+      "mean_observed_delay": 16.45059880239521
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 9,
+      "scheduled": 681,
+      "cancellation_rate": 0.011747430249632892,
+      "disruption_rate": 0.13656387665198239,
+      "departure_delay_observations": 673,
+      "mean_observed_delay": 7.630014858841011
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 10,
+      "scheduled": 712,
+      "cancellation_rate": 0.004213483146067416,
+      "disruption_rate": 0.10533707865168539,
+      "departure_delay_observations": 709,
+      "mean_observed_delay": 2.1283497884344147
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 11,
+      "scheduled": 618,
+      "cancellation_rate": 0.003236245954692557,
+      "disruption_rate": 0.13915857605177995,
+      "departure_delay_observations": 616,
+      "mean_observed_delay": 7.564935064935065
+    },
+    {
+      "origin": "ATL",
+      "carrier": "UA",
+      "month": 12,
+      "scheduled": 532,
+      "cancellation_rate": 0.007518796992481203,
+      "disruption_rate": 0.18796992481203006,
+      "departure_delay_observations": 528,
+      "mean_observed_delay": 11.9375
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 1,
+      "scheduled": 2983,
+      "cancellation_rate": 0.01910828025477707,
+      "disruption_rate": 0.3047267851156554,
+      "departure_delay_observations": 2927,
+      "mean_observed_delay": 15.008882815169114
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 2,
+      "scheduled": 2618,
+      "cancellation_rate": 0.0007639419404125286,
+      "disruption_rate": 0.15660809778456838,
+      "departure_delay_observations": 2616,
+      "mean_observed_delay": 5.71980122324159
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 3,
+      "scheduled": 3196,
+      "cancellation_rate": 0.004380475594493116,
+      "disruption_rate": 0.25782227784730916,
+      "departure_delay_observations": 3182,
+      "mean_observed_delay": 12.10779384035198
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 4,
+      "scheduled": 3239,
+      "cancellation_rate": 0.0043223217042297,
+      "disruption_rate": 0.24729854893485645,
+      "departure_delay_observations": 3227,
+      "mean_observed_delay": 11.831112488379299
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 5,
+      "scheduled": 3347,
+      "cancellation_rate": 0.0032865252464893933,
+      "disruption_rate": 0.3606214520466089,
+      "departure_delay_observations": 3338,
+      "mean_observed_delay": 22.640802875973637
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 6,
+      "scheduled": 2731,
+      "cancellation_rate": 0.0029293299157817647,
+      "disruption_rate": 0.28487733430977663,
+      "departure_delay_observations": 2723,
+      "mean_observed_delay": 14.688946015424165
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 7,
+      "scheduled": 2743,
+      "cancellation_rate": 0.005103900838497995,
+      "disruption_rate": 0.3930003645643456,
+      "departure_delay_observations": 2734,
+      "mean_observed_delay": 25.151792245793708
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 8,
+      "scheduled": 2596,
+      "cancellation_rate": 0.015408320493066256,
+      "disruption_rate": 0.20955315870570107,
+      "departure_delay_observations": 2556,
+      "mean_observed_delay": 9.490610328638498
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 9,
+      "scheduled": 2454,
+      "cancellation_rate": 0.005297473512632437,
+      "disruption_rate": 0.1466992665036675,
+      "departure_delay_observations": 2441,
+      "mean_observed_delay": 6.6095862351495285
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 10,
+      "scheduled": 2535,
+      "cancellation_rate": 0.015779092702169626,
+      "disruption_rate": 0.178698224852071,
+      "departure_delay_observations": 2495,
+      "mean_observed_delay": 6.076553106212425
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 11,
+      "scheduled": 2449,
+      "cancellation_rate": 0.0016333197223356473,
+      "disruption_rate": 0.1518987341772152,
+      "departure_delay_observations": 2445,
+      "mean_observed_delay": 5.623721881390593
+    },
+    {
+      "origin": "ATL",
+      "carrier": "WN",
+      "month": 12,
+      "scheduled": 2503,
+      "cancellation_rate": 0.0015980823012385138,
+      "disruption_rate": 0.24810227726727926,
+      "departure_delay_observations": 2499,
+      "mean_observed_delay": 12.083233293317328
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 1,
+      "scheduled": 688,
+      "cancellation_rate": 0.014534883720930232,
+      "disruption_rate": 0.27761627906976744,
+      "departure_delay_observations": 678,
+      "mean_observed_delay": 20.140117994100294
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 2,
+      "scheduled": 653,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.1638591117917305,
+      "departure_delay_observations": 653,
+      "mean_observed_delay": 11.094946401225116
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 3,
+      "scheduled": 715,
+      "cancellation_rate": 0.019580419580419582,
+      "disruption_rate": 0.213986013986014,
+      "departure_delay_observations": 702,
+      "mean_observed_delay": 19.599715099715098
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 4,
+      "scheduled": 730,
+      "cancellation_rate": 0.00821917808219178,
+      "disruption_rate": 0.20821917808219179,
+      "departure_delay_observations": 724,
+      "mean_observed_delay": 14.867403314917127
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 5,
+      "scheduled": 763,
+      "cancellation_rate": 0.04062909567496723,
+      "disruption_rate": 0.35910878112712974,
+      "departure_delay_observations": 732,
+      "mean_observed_delay": 31.756830601092897
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 6,
+      "scheduled": 714,
+      "cancellation_rate": 0.01680672268907563,
+      "disruption_rate": 0.3081232492997199,
+      "departure_delay_observations": 702,
+      "mean_observed_delay": 29.21794871794872
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 7,
+      "scheduled": 725,
+      "cancellation_rate": 0.02620689655172414,
+      "disruption_rate": 0.31862068965517243,
+      "departure_delay_observations": 706,
+      "mean_observed_delay": 30.0014164305949
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 8,
+      "scheduled": 691,
+      "cancellation_rate": 0.020260492040520984,
+      "disruption_rate": 0.25180897250361794,
+      "departure_delay_observations": 677,
+      "mean_observed_delay": 21.19202363367799
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 9,
+      "scheduled": 672,
+      "cancellation_rate": 0.004464285714285714,
+      "disruption_rate": 0.17410714285714285,
+      "departure_delay_observations": 669,
+      "mean_observed_delay": 13.82660687593423
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 10,
+      "scheduled": 701,
+      "cancellation_rate": 0.005706134094151213,
+      "disruption_rate": 0.11126961483594865,
+      "departure_delay_observations": 698,
+      "mean_observed_delay": 8.94269340974212
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 11,
+      "scheduled": 659,
+      "cancellation_rate": 0.01669195751138088,
+      "disruption_rate": 0.14871016691957512,
+      "departure_delay_observations": 649,
+      "mean_observed_delay": 14.158705701078583
+    },
+    {
+      "origin": "DEN",
+      "carrier": "AA",
+      "month": 12,
+      "scheduled": 725,
+      "cancellation_rate": 0.01793103448275862,
+      "disruption_rate": 0.1917241379310345,
+      "departure_delay_observations": 712,
+      "mean_observed_delay": 13.82865168539326
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 1,
+      "scheduled": 1002,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.18363273453093812,
+      "departure_delay_observations": 1002,
+      "mean_observed_delay": 9.182634730538922
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 2,
+      "scheduled": 949,
+      "cancellation_rate": 0.005268703898840885,
+      "disruption_rate": 0.13066385669125394,
+      "departure_delay_observations": 944,
+      "mean_observed_delay": 8.020127118644067
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 3,
+      "scheduled": 1077,
+      "cancellation_rate": 0.0018570102135561746,
+      "disruption_rate": 0.11327762302692665,
+      "departure_delay_observations": 1075,
+      "mean_observed_delay": 5.773023255813953
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 4,
+      "scheduled": 1058,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.13799621928166353,
+      "departure_delay_observations": 1058,
+      "mean_observed_delay": 6.373345935727788
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 5,
+      "scheduled": 1104,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.20380434782608695,
+      "departure_delay_observations": 1104,
+      "mean_observed_delay": 11.432971014492754
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 6,
+      "scheduled": 1110,
+      "cancellation_rate": 0.0009009009009009009,
+      "disruption_rate": 0.23603603603603604,
+      "departure_delay_observations": 1109,
+      "mean_observed_delay": 16.363390441839496
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 7,
+      "scheduled": 1150,
+      "cancellation_rate": 0.07391304347826087,
+      "disruption_rate": 0.3391304347826087,
+      "departure_delay_observations": 1066,
+      "mean_observed_delay": 26.04033771106942
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 8,
+      "scheduled": 1077,
+      "cancellation_rate": 0.012999071494893221,
+      "disruption_rate": 0.23119777158774374,
+      "departure_delay_observations": 1063,
+      "mean_observed_delay": 14.89181561618062
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 9,
+      "scheduled": 1001,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.12687312687312688,
+      "departure_delay_observations": 1001,
+      "mean_observed_delay": 6.165834165834166
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 10,
+      "scheduled": 1023,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.11730205278592376,
+      "departure_delay_observations": 1023,
+      "mean_observed_delay": 5.348973607038123
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 11,
+      "scheduled": 900,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.12444444444444444,
+      "departure_delay_observations": 900,
+      "mean_observed_delay": 4.52
+    },
+    {
+      "origin": "DEN",
+      "carrier": "DL",
+      "month": 12,
+      "scheduled": 988,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.18927125506072875,
+      "departure_delay_observations": 988,
+      "mean_observed_delay": 10.327935222672064
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 1,
+      "scheduled": 7906,
+      "cancellation_rate": 0.0679230963824943,
+      "disruption_rate": 0.2894004553503668,
+      "departure_delay_observations": 7378,
+      "mean_observed_delay": 16.392518297641637
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 2,
+      "scheduled": 7500,
+      "cancellation_rate": 0.007466666666666667,
+      "disruption_rate": 0.22186666666666666,
+      "departure_delay_observations": 7455,
+      "mean_observed_delay": 14.832193158953721
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 3,
+      "scheduled": 8551,
+      "cancellation_rate": 0.00783534089580166,
+      "disruption_rate": 0.18687872763419483,
+      "departure_delay_observations": 8486,
+      "mean_observed_delay": 9.281993872260193
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 4,
+      "scheduled": 7882,
+      "cancellation_rate": 0.0020299416391778738,
+      "disruption_rate": 0.1950012687135245,
+      "departure_delay_observations": 7867,
+      "mean_observed_delay": 11.056438286513284
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 5,
+      "scheduled": 8658,
+      "cancellation_rate": 0.00693000693000693,
+      "disruption_rate": 0.26588126588126587,
+      "departure_delay_observations": 8599,
+      "mean_observed_delay": 17.706477497383418
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 6,
+      "scheduled": 8825,
+      "cancellation_rate": 0.00793201133144476,
+      "disruption_rate": 0.270028328611898,
+      "departure_delay_observations": 8760,
+      "mean_observed_delay": 17.475684931506848
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 7,
+      "scheduled": 9041,
+      "cancellation_rate": 0.024997234819157173,
+      "disruption_rate": 0.3017365335692954,
+      "departure_delay_observations": 8822,
+      "mean_observed_delay": 21.08954885513489
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 8,
+      "scheduled": 9027,
+      "cancellation_rate": 0.009970089730807577,
+      "disruption_rate": 0.2542372881355932,
+      "departure_delay_observations": 8944,
+      "mean_observed_delay": 16.450134168157422
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 9,
+      "scheduled": 8637,
+      "cancellation_rate": 0.0026629616765080468,
+      "disruption_rate": 0.14171587356721083,
+      "departure_delay_observations": 8615,
+      "mean_observed_delay": 5.896459663377829
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 10,
+      "scheduled": 9080,
+      "cancellation_rate": 0.003964757709251102,
+      "disruption_rate": 0.10991189427312775,
+      "departure_delay_observations": 9044,
+      "mean_observed_delay": 3.213843432109686
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 11,
+      "scheduled": 8312,
+      "cancellation_rate": 0.0028873917228103944,
+      "disruption_rate": 0.16686717998075073,
+      "departure_delay_observations": 8297,
+      "mean_observed_delay": 7.546583102326142
+    },
+    {
+      "origin": "DEN",
+      "carrier": "UA",
+      "month": 12,
+      "scheduled": 8548,
+      "cancellation_rate": 0.002339728591483388,
+      "disruption_rate": 0.15851661207299952,
+      "departure_delay_observations": 8529,
+      "mean_observed_delay": 7.641810294290069
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 1,
+      "scheduled": 8073,
+      "cancellation_rate": 0.03480738263346959,
+      "disruption_rate": 0.3997274866840084,
+      "departure_delay_observations": 7794,
+      "mean_observed_delay": 17.24005645368232
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 2,
+      "scheduled": 7319,
+      "cancellation_rate": 0.0049187047410848474,
+      "disruption_rate": 0.31288427380789724,
+      "departure_delay_observations": 7288,
+      "mean_observed_delay": 16.59234357848518
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 3,
+      "scheduled": 8511,
+      "cancellation_rate": 0.02126659616966279,
+      "disruption_rate": 0.321701327693573,
+      "departure_delay_observations": 8331,
+      "mean_observed_delay": 14.727283639419037
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 4,
+      "scheduled": 8334,
+      "cancellation_rate": 0.002759779217662587,
+      "disruption_rate": 0.29421646268298535,
+      "departure_delay_observations": 8312,
+      "mean_observed_delay": 13.45019249278152
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 5,
+      "scheduled": 8521,
+      "cancellation_rate": 0.006806712827132966,
+      "disruption_rate": 0.38352306067362985,
+      "departure_delay_observations": 8465,
+      "mean_observed_delay": 22.55759007678677
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 6,
+      "scheduled": 8609,
+      "cancellation_rate": 0.0017423626437449182,
+      "disruption_rate": 0.3786734812405622,
+      "departure_delay_observations": 8595,
+      "mean_observed_delay": 20.72716695753345
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 7,
+      "scheduled": 8943,
+      "cancellation_rate": 0.00290730180029073,
+      "disruption_rate": 0.34496254053449626,
+      "departure_delay_observations": 8919,
+      "mean_observed_delay": 18.292073102365737
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 8,
+      "scheduled": 7984,
+      "cancellation_rate": 0.0031312625250501003,
+      "disruption_rate": 0.3034819639278557,
+      "departure_delay_observations": 7960,
+      "mean_observed_delay": 15.742713567839196
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 9,
+      "scheduled": 7594,
+      "cancellation_rate": 0.0017118777982617856,
+      "disruption_rate": 0.2025283118251251,
+      "departure_delay_observations": 7581,
+      "mean_observed_delay": 8.401925867299829
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 10,
+      "scheduled": 7717,
+      "cancellation_rate": 0.004665025268886873,
+      "disruption_rate": 0.17351302319554232,
+      "departure_delay_observations": 7681,
+      "mean_observed_delay": 6.846634552792605
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 11,
+      "scheduled": 7340,
+      "cancellation_rate": 0.010217983651226158,
+      "disruption_rate": 0.21212534059945504,
+      "departure_delay_observations": 7267,
+      "mean_observed_delay": 8.920324755745149
+    },
+    {
+      "origin": "DEN",
+      "carrier": "WN",
+      "month": 12,
+      "scheduled": 7669,
+      "cancellation_rate": 0.0023471117485982526,
+      "disruption_rate": 0.25713913156865303,
+      "departure_delay_observations": 7652,
+      "mean_observed_delay": 12.690277051751176
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 1,
+      "scheduled": 13020,
+      "cancellation_rate": 0.01912442396313364,
+      "disruption_rate": 0.3629032258064516,
+      "departure_delay_observations": 12806,
+      "mean_observed_delay": 25.385366234577543
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 2,
+      "scheduled": 12582,
+      "cancellation_rate": 0.0004768717215069146,
+      "disruption_rate": 0.21880464155142268,
+      "departure_delay_observations": 12576,
+      "mean_observed_delay": 10.68352417302799
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 3,
+      "scheduled": 14031,
+      "cancellation_rate": 0.01624973273465897,
+      "disruption_rate": 0.37445656047323783,
+      "departure_delay_observations": 13812,
+      "mean_observed_delay": 27.131262670141904
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 4,
+      "scheduled": 13274,
+      "cancellation_rate": 0.01996383908392346,
+      "disruption_rate": 0.33833057104113307,
+      "departure_delay_observations": 13013,
+      "mean_observed_delay": 22.906093906093908
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 5,
+      "scheduled": 14606,
+      "cancellation_rate": 0.07852937149116801,
+      "disruption_rate": 0.514788443105573,
+      "departure_delay_observations": 13480,
+      "mean_observed_delay": 43.38419881305638
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 6,
+      "scheduled": 14671,
+      "cancellation_rate": 0.021948060800218116,
+      "disruption_rate": 0.46015949833003883,
+      "departure_delay_observations": 14359,
+      "mean_observed_delay": 34.5941221533533
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 7,
+      "scheduled": 15204,
+      "cancellation_rate": 0.015916863983162326,
+      "disruption_rate": 0.47441462772954485,
+      "departure_delay_observations": 14974,
+      "mean_observed_delay": 38.61860558301055
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 8,
+      "scheduled": 14268,
+      "cancellation_rate": 0.013807120829828988,
+      "disruption_rate": 0.3843566021867115,
+      "departure_delay_observations": 14078,
+      "mean_observed_delay": 29.41042761755931
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 9,
+      "scheduled": 13346,
+      "cancellation_rate": 0.002322793346320995,
+      "disruption_rate": 0.24763974224486737,
+      "departure_delay_observations": 13315,
+      "mean_observed_delay": 13.084115659031168
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 10,
+      "scheduled": 14562,
+      "cancellation_rate": 0.004188985029528911,
+      "disruption_rate": 0.21837659662134323,
+      "departure_delay_observations": 14502,
+      "mean_observed_delay": 10.803061646669425
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 11,
+      "scheduled": 13100,
+      "cancellation_rate": 0.01717557251908397,
+      "disruption_rate": 0.2582442748091603,
+      "departure_delay_observations": 12876,
+      "mean_observed_delay": 14.70479962721342
+    },
+    {
+      "origin": "DFW",
+      "carrier": "AA",
+      "month": 12,
+      "scheduled": 13622,
+      "cancellation_rate": 0.024519160182058436,
+      "disruption_rate": 0.33746880046982825,
+      "departure_delay_observations": 13290,
+      "mean_observed_delay": 25.677577125658388
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 1,
+      "scheduled": 979,
+      "cancellation_rate": 0.009193054136874362,
+      "disruption_rate": 0.24616956077630234,
+      "departure_delay_observations": 970,
+      "mean_observed_delay": 22.04123711340206
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 2,
+      "scheduled": 923,
+      "cancellation_rate": 0.0032502708559046588,
+      "disruption_rate": 0.09425785482123511,
+      "departure_delay_observations": 920,
+      "mean_observed_delay": 3.6380434782608697
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 3,
+      "scheduled": 1002,
+      "cancellation_rate": 0.000998003992015968,
+      "disruption_rate": 0.17365269461077845,
+      "departure_delay_observations": 1001,
+      "mean_observed_delay": 11.791208791208792
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 4,
+      "scheduled": 991,
+      "cancellation_rate": 0.005045408678102927,
+      "disruption_rate": 0.22906155398587286,
+      "departure_delay_observations": 986,
+      "mean_observed_delay": 16.580121703853955
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 5,
+      "scheduled": 1025,
+      "cancellation_rate": 0.002926829268292683,
+      "disruption_rate": 0.3170731707317073,
+      "departure_delay_observations": 1022,
+      "mean_observed_delay": 37.4041095890411
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 6,
+      "scheduled": 987,
+      "cancellation_rate": 0.0010131712259371835,
+      "disruption_rate": 0.22796352583586627,
+      "departure_delay_observations": 986,
+      "mean_observed_delay": 15.376267748478702
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 7,
+      "scheduled": 1061,
+      "cancellation_rate": 0.06974552309142319,
+      "disruption_rate": 0.351555136663525,
+      "departure_delay_observations": 987,
+      "mean_observed_delay": 26.81560283687943
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 8,
+      "scheduled": 1082,
+      "cancellation_rate": 0.011090573012939002,
+      "disruption_rate": 0.17837338262476896,
+      "departure_delay_observations": 1071,
+      "mean_observed_delay": 9.133520074696545
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 9,
+      "scheduled": 1043,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.11792905081495686,
+      "departure_delay_observations": 1043,
+      "mean_observed_delay": 2.713326941514861
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 10,
+      "scheduled": 1084,
+      "cancellation_rate": 0.0018450184501845018,
+      "disruption_rate": 0.08025830258302583,
+      "departure_delay_observations": 1084,
+      "mean_observed_delay": 1.2527675276752768
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 11,
+      "scheduled": 1029,
+      "cancellation_rate": 0.001943634596695821,
+      "disruption_rate": 0.14965986394557823,
+      "departure_delay_observations": 1027,
+      "mean_observed_delay": 12.200584225900682
+    },
+    {
+      "origin": "DFW",
+      "carrier": "DL",
+      "month": 12,
+      "scheduled": 1013,
+      "cancellation_rate": 0.0009871668311944718,
+      "disruption_rate": 0.2250740375123396,
+      "departure_delay_observations": 1012,
+      "mean_observed_delay": 15.649209486166008
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 1,
+      "scheduled": 609,
+      "cancellation_rate": 0.034482758620689655,
+      "disruption_rate": 0.2561576354679803,
+      "departure_delay_observations": 588,
+      "mean_observed_delay": 17.04591836734694
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 2,
+      "scheduled": 607,
+      "cancellation_rate": 0.006589785831960461,
+      "disruption_rate": 0.13344316309719934,
+      "departure_delay_observations": 603,
+      "mean_observed_delay": 5.140961857379768
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 3,
+      "scheduled": 659,
+      "cancellation_rate": 0.007587253414264037,
+      "disruption_rate": 0.19119878603945373,
+      "departure_delay_observations": 654,
+      "mean_observed_delay": 14.380733944954128
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 4,
+      "scheduled": 639,
+      "cancellation_rate": 0.01564945226917058,
+      "disruption_rate": 0.2347417840375587,
+      "departure_delay_observations": 629,
+      "mean_observed_delay": 12.108108108108109
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 5,
+      "scheduled": 689,
+      "cancellation_rate": 0.033381712626995644,
+      "disruption_rate": 0.4107402031930334,
+      "departure_delay_observations": 666,
+      "mean_observed_delay": 45.496996996997
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 6,
+      "scheduled": 693,
+      "cancellation_rate": 0.015873015873015872,
+      "disruption_rate": 0.23376623376623376,
+      "departure_delay_observations": 682,
+      "mean_observed_delay": 17.299120234604107
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 7,
+      "scheduled": 691,
+      "cancellation_rate": 0.03907380607814761,
+      "disruption_rate": 0.30824891461649784,
+      "departure_delay_observations": 664,
+      "mean_observed_delay": 25.39156626506024
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 8,
+      "scheduled": 688,
+      "cancellation_rate": 0.02180232558139535,
+      "disruption_rate": 0.1875,
+      "departure_delay_observations": 673,
+      "mean_observed_delay": 11.674591381872213
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 9,
+      "scheduled": 744,
+      "cancellation_rate": 0.002688172043010753,
+      "disruption_rate": 0.0967741935483871,
+      "departure_delay_observations": 742,
+      "mean_observed_delay": 1.3369272237196765
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 10,
+      "scheduled": 785,
+      "cancellation_rate": 0.0025477707006369425,
+      "disruption_rate": 0.10828025477707007,
+      "departure_delay_observations": 783,
+      "mean_observed_delay": 4.94125159642401
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 11,
+      "scheduled": 773,
+      "cancellation_rate": 0.00646830530401035,
+      "disruption_rate": 0.19663648124191463,
+      "departure_delay_observations": 768,
+      "mean_observed_delay": 16.958333333333332
+    },
+    {
+      "origin": "DFW",
+      "carrier": "UA",
+      "month": 12,
+      "scheduled": 691,
+      "cancellation_rate": 0.005788712011577424,
+      "disruption_rate": 0.1678726483357453,
+      "departure_delay_observations": 687,
+      "mean_observed_delay": 10.413391557496361
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 1,
+      "scheduled": 3686,
+      "cancellation_rate": 0.020075963103635377,
+      "disruption_rate": 0.29489962018448185,
+      "departure_delay_observations": 3620,
+      "mean_observed_delay": 22.19917127071823
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 2,
+      "scheduled": 3596,
+      "cancellation_rate": 0.002224694104560623,
+      "disruption_rate": 0.157119021134594,
+      "departure_delay_observations": 3589,
+      "mean_observed_delay": 9.420730008358875
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 3,
+      "scheduled": 3910,
+      "cancellation_rate": 0.004347826086956522,
+      "disruption_rate": 0.24475703324808185,
+      "departure_delay_observations": 3895,
+      "mean_observed_delay": 17.34069319640565
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 4,
+      "scheduled": 4212,
+      "cancellation_rate": 0.0023741690408357074,
+      "disruption_rate": 0.2547483380816714,
+      "departure_delay_observations": 4202,
+      "mean_observed_delay": 20.200142789148025
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 5,
+      "scheduled": 4488,
+      "cancellation_rate": 0.020053475935828877,
+      "disruption_rate": 0.3861408199643494,
+      "departure_delay_observations": 4403,
+      "mean_observed_delay": 38.986827163297754
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 6,
+      "scheduled": 4724,
+      "cancellation_rate": 0.01947502116850127,
+      "disruption_rate": 0.3943691786621507,
+      "departure_delay_observations": 4637,
+      "mean_observed_delay": 34.10675005391417
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 7,
+      "scheduled": 4955,
+      "cancellation_rate": 0.022401614530776992,
+      "disruption_rate": 0.4058526740665994,
+      "departure_delay_observations": 4857,
+      "mean_observed_delay": 36.00720609429689
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 8,
+      "scheduled": 5058,
+      "cancellation_rate": 0.023527085804665875,
+      "disruption_rate": 0.3390668248319494,
+      "departure_delay_observations": 4946,
+      "mean_observed_delay": 25.7135058633239
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 9,
+      "scheduled": 4894,
+      "cancellation_rate": 0.0018389865140988966,
+      "disruption_rate": 0.17858602370249285,
+      "departure_delay_observations": 4885,
+      "mean_observed_delay": 10.858751279426818
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 10,
+      "scheduled": 4895,
+      "cancellation_rate": 0.0040858018386108275,
+      "disruption_rate": 0.17017364657814096,
+      "departure_delay_observations": 4875,
+      "mean_observed_delay": 10.483076923076924
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 11,
+      "scheduled": 3687,
+      "cancellation_rate": 0.0016273393002441008,
+      "disruption_rate": 0.1562245728234337,
+      "departure_delay_observations": 3681,
+      "mean_observed_delay": 9.342298288508557
+    },
+    {
+      "origin": "ORD",
+      "carrier": "AA",
+      "month": 12,
+      "scheduled": 3890,
+      "cancellation_rate": 0.004370179948586119,
+      "disruption_rate": 0.2534704370179949,
+      "departure_delay_observations": 3880,
+      "mean_observed_delay": 19.049742268041236
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 1,
+      "scheduled": 587,
+      "cancellation_rate": 0.034071550255536626,
+      "disruption_rate": 0.2657580919931857,
+      "departure_delay_observations": 567,
+      "mean_observed_delay": 24.264550264550266
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 2,
+      "scheduled": 559,
+      "cancellation_rate": 0.0035778175313059034,
+      "disruption_rate": 0.09123434704830054,
+      "departure_delay_observations": 558,
+      "mean_observed_delay": 2.609318996415771
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 3,
+      "scheduled": 729,
+      "cancellation_rate": 0.0013717421124828531,
+      "disruption_rate": 0.13991769547325103,
+      "departure_delay_observations": 728,
+      "mean_observed_delay": 7.90934065934066
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 4,
+      "scheduled": 886,
+      "cancellation_rate": 0.004514672686230248,
+      "disruption_rate": 0.18510158013544017,
+      "departure_delay_observations": 882,
+      "mean_observed_delay": 14.890022675736962
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 5,
+      "scheduled": 1059,
+      "cancellation_rate": 0.0018885741265344666,
+      "disruption_rate": 0.2738432483474976,
+      "departure_delay_observations": 1057,
+      "mean_observed_delay": 30.111636707663198
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 6,
+      "scheduled": 1049,
+      "cancellation_rate": 0.00667302192564347,
+      "disruption_rate": 0.2554814108674929,
+      "departure_delay_observations": 1044,
+      "mean_observed_delay": 19.38984674329502
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 7,
+      "scheduled": 1062,
+      "cancellation_rate": 0.06497175141242938,
+      "disruption_rate": 0.3314500941619586,
+      "departure_delay_observations": 994,
+      "mean_observed_delay": 34.88933601609658
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 8,
+      "scheduled": 1090,
+      "cancellation_rate": 0.014678899082568808,
+      "disruption_rate": 0.24403669724770644,
+      "departure_delay_observations": 1074,
+      "mean_observed_delay": 19.890130353817504
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 9,
+      "scheduled": 1045,
+      "cancellation_rate": 0.0009569377990430622,
+      "disruption_rate": 0.13588516746411483,
+      "departure_delay_observations": 1044,
+      "mean_observed_delay": 5.64272030651341
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 10,
+      "scheduled": 1087,
+      "cancellation_rate": 0.0009199632014719411,
+      "disruption_rate": 0.13063477460901565,
+      "departure_delay_observations": 1086,
+      "mean_observed_delay": 2.979742173112339
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 11,
+      "scheduled": 983,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.11393692777212615,
+      "departure_delay_observations": 983,
+      "mean_observed_delay": 4.14852492370295
+    },
+    {
+      "origin": "ORD",
+      "carrier": "DL",
+      "month": 12,
+      "scheduled": 858,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.19114219114219114,
+      "departure_delay_observations": 858,
+      "mean_observed_delay": 11.14102564102564
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 1,
+      "scheduled": 6679,
+      "cancellation_rate": 0.07590956730049409,
+      "disruption_rate": 0.34121874532115587,
+      "departure_delay_observations": 6174,
+      "mean_observed_delay": 24.917719468739875
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 2,
+      "scheduled": 6498,
+      "cancellation_rate": 0.0021545090797168358,
+      "disruption_rate": 0.12511542012927054,
+      "departure_delay_observations": 6486,
+      "mean_observed_delay": 4.50508788159112
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 3,
+      "scheduled": 7609,
+      "cancellation_rate": 0.0021027730319358655,
+      "disruption_rate": 0.17702720462610066,
+      "departure_delay_observations": 7594,
+      "mean_observed_delay": 8.046352383460627
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 4,
+      "scheduled": 7207,
+      "cancellation_rate": 0.0029138337727209656,
+      "disruption_rate": 0.18218398778964895,
+      "departure_delay_observations": 7187,
+      "mean_observed_delay": 9.20217058577988
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 5,
+      "scheduled": 7656,
+      "cancellation_rate": 0.009796238244514107,
+      "disruption_rate": 0.29401776384535006,
+      "departure_delay_observations": 7583,
+      "mean_observed_delay": 21.79757351971515
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 6,
+      "scheduled": 7426,
+      "cancellation_rate": 0.009426339886883921,
+      "disruption_rate": 0.276326420684083,
+      "departure_delay_observations": 7363,
+      "mean_observed_delay": 19.666304495450223
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 7,
+      "scheduled": 7777,
+      "cancellation_rate": 0.034203420342034205,
+      "disruption_rate": 0.3363764947923364,
+      "departure_delay_observations": 7534,
+      "mean_observed_delay": 25.21781258295726
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 8,
+      "scheduled": 8190,
+      "cancellation_rate": 0.014774114774114774,
+      "disruption_rate": 0.2989010989010989,
+      "departure_delay_observations": 8079,
+      "mean_observed_delay": 20.315756900606512
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 9,
+      "scheduled": 8155,
+      "cancellation_rate": 0.00269773145309626,
+      "disruption_rate": 0.14334763948497853,
+      "departure_delay_observations": 8135,
+      "mean_observed_delay": 5.745298094652735
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 10,
+      "scheduled": 8341,
+      "cancellation_rate": 0.005994485073732166,
+      "disruption_rate": 0.13763337729289055,
+      "departure_delay_observations": 8292,
+      "mean_observed_delay": 4.92100820067535
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 11,
+      "scheduled": 7165,
+      "cancellation_rate": 0.0011165387299371947,
+      "disruption_rate": 0.1550593161200279,
+      "departure_delay_observations": 7158,
+      "mean_observed_delay": 7.558675607711652
+    },
+    {
+      "origin": "ORD",
+      "carrier": "UA",
+      "month": 12,
+      "scheduled": 7127,
+      "cancellation_rate": 0.002385295355689631,
+      "disruption_rate": 0.2044338431317525,
+      "departure_delay_observations": 7112,
+      "mean_observed_delay": 11.9498031496063
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 1,
+      "scheduled": 763,
+      "cancellation_rate": 0.10091743119266056,
+      "disruption_rate": 0.3394495412844037,
+      "departure_delay_observations": 686,
+      "mean_observed_delay": 17.332361516034986
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 2,
+      "scheduled": 680,
+      "cancellation_rate": 0.004411764705882353,
+      "disruption_rate": 0.11029411764705882,
+      "departure_delay_observations": 677,
+      "mean_observed_delay": 2.070901033973412
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 3,
+      "scheduled": 775,
+      "cancellation_rate": 0.015483870967741935,
+      "disruption_rate": 0.18838709677419355,
+      "departure_delay_observations": 763,
+      "mean_observed_delay": 8.581913499344692
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 4,
+      "scheduled": 750,
+      "cancellation_rate": 0.009333333333333334,
+      "disruption_rate": 0.18666666666666668,
+      "departure_delay_observations": 744,
+      "mean_observed_delay": 8.001344086021506
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 5,
+      "scheduled": 769,
+      "cancellation_rate": 0.009102730819245773,
+      "disruption_rate": 0.27698309492847856,
+      "departure_delay_observations": 764,
+      "mean_observed_delay": 21.964659685863875
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 6,
+      "scheduled": 491,
+      "cancellation_rate": 0.002036659877800407,
+      "disruption_rate": 0.23625254582484725,
+      "departure_delay_observations": 490,
+      "mean_observed_delay": 14.53265306122449
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 7,
+      "scheduled": 487,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.26283367556468173,
+      "departure_delay_observations": 487,
+      "mean_observed_delay": 15.605749486652977
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 8,
+      "scheduled": 434,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.20276497695852536,
+      "departure_delay_observations": 434,
+      "mean_observed_delay": 9.509216589861751
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 9,
+      "scheduled": 409,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.10513447432762836,
+      "departure_delay_observations": 409,
+      "mean_observed_delay": 2.858190709046455
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 10,
+      "scheduled": 403,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.06699751861042183,
+      "departure_delay_observations": 403,
+      "mean_observed_delay": 0.2878411910669975
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 11,
+      "scheduled": 404,
+      "cancellation_rate": 0.0024752475247524753,
+      "disruption_rate": 0.11386138613861387,
+      "departure_delay_observations": 403,
+      "mean_observed_delay": 3.870967741935484
+    },
+    {
+      "origin": "ORD",
+      "carrier": "WN",
+      "month": 12,
+      "scheduled": 428,
+      "cancellation_rate": 0.0,
+      "disruption_rate": 0.17523364485981308,
+      "departure_delay_observations": 428,
+      "mean_observed_delay": 11.133177570093459
+    }
+  ],
+  "weather_association": [
+    {
+      "cohort": "visibility <5 km",
+      "airport_cutoffs": 1056,
+      "overlapping_scheduled_exposures": 62757,
+      "disruption_rate": 0.35938620392944215
+    },
+    {
+      "cohort": "visibility >=5 km",
+      "airport_cutoffs": 27415,
+      "overlapping_scheduled_exposures": 1611908,
+      "disruption_rate": 0.2454004819133598
+    }
+  ],
+  "retrospective_rotations": [
+    {
+      "cohort": "previous arrival <15 min late",
+      "validated_links": 590930,
+      "following_departure_late_rate": 0.1269101247186638,
+      "following_mean_departure_delay": 4.37963548982113
+    },
+    {
+      "cohort": "previous arrival >=15 min late",
+      "validated_links": 133594,
+      "following_departure_late_rate": 0.5676976510921149,
+      "following_mean_departure_delay": 38.430940012276004
+    }
+  ]
+}

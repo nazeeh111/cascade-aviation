@@ -1,0 +1,20 @@
+{
+  "attribution": "OpenFlights airport database; https://openflights.org/data.php",
+  "bytes": 1127225,
+  "cache_reused": false,
+  "content_type": "text/plain; charset=utf-8",
+  "etag": "\"f62f952ee34ce760e8020858770ed6a3e0c2c98d8555ffbde309ee64a60edc12\"",
+  "grain": "one IATA airport metadata row; downstream asserts code uniqueness",
+  "last_modified": null,
+  "license": "ODbL-1.0 and DbCL-1.0",
+  "parquet_bytes": 230876,
+  "parquet_path": "data/airports.parquet",
+  "parquet_sha256": "568bdde42c26961e47595919a31da13846e3460fc8c36fc89a4884d3af78cfdc",
+  "resolved_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+  "retrieved_at": "2026-10-26T01:55:24.418472+00:00",
+  "schema_version": 1,
+  "selected_rows": 5515,
+  "sha256": "9387cdb38df5bd664da823f8ccb69fdd9b33a1888f5b7cca09c34a3cd9ff59f9",
+  "source_rows": 5515,
+  "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
+}

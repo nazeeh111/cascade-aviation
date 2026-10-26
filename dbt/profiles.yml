@@ -1,0 +1,7 @@
+cascade:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('CASCADE_DATABASE', '../data/warehouse.duckdb') }}"
+      threads: 4

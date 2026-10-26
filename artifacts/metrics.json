@@ -1,0 +1,486 @@
+{
+  "run_id": "forecast-942079de11e2",
+  "input_sha256": "6e82937fbea8988e5f82999036180f2fe8c2995ff0dfdc46bebd6453845354d7",
+  "code_sha256": "7d4c317248f9e415c71fa3c9693a76cc28c1e80e12ba0f2594dbd56ec1f97570",
+  "source_manifest_sha256": {
+    "airports.json": "d1b146c08d3f0b7e5e9897234446b50fd20055acd3c5682e4a452844a39630ad",
+    "bts-2024-01.json": "74fdd141910cb977b6f5ef6ad1e6572f29b27c2f0352fd9eda512e9ead2563ed",
+    "bts-2024-02.json": "4b32409d904dee62550d82b63530a12d4f4d282fba29116bef58c213ab2ff5e9",
+    "bts-2024-03.json": "e9706e1ea25cd277243537f877603fdf351122d7ae88d5405a0069f696f55b1f",
+    "bts-2024-04.json": "1a3cd7a02d23d23da1b40a18d4a4d14f5ca6dfa828d198a82b54c42f0be5acb8",
+    "bts-2024-05.json": "61e464039877b363102d726290055157dbb1375adb275d1ee7fe0af7d4b63047",
+    "bts-2024-06.json": "a74416d30ed491146320e38dce374e5baa5ecc0482f3aff7a0be5f96e0d7bcce",
+    "bts-2024-07.json": "cae03a0cd64562de23b225ffc3711809f5d2e446a6f2e63ea39ec2740fd45509",
+    "bts-2024-08.json": "d2ecead1ff238aa16fb30a8a23895a107b98fceea85813dccccf3bd40f974b24",
+    "bts-2024-09.json": "81e34a460370754edf5e95631eb5a9ecd790b8a5acd836645b3407ea44191df6",
+    "bts-2024-10.json": "d9ecf0a508351b64da14228ba22b39ddd1ef86b313d34d4403fdc72afb88e14f",
+    "bts-2024-11.json": "fc2dc5a38628ed6d83b220224ee00332183df4db640fbe97a735c2c213bd4d24",
+    "bts-2024-12.json": "e3866a2ecd0c747c77a7915213858a24f19f2c69d7f4eb9943f68510179366f6",
+    "noaa-2024-72219013874.json": "adbbbe835b4bb56bd6f965dba70f7bf4591da026c9ad6cb3012748bb57cf4fc2",
+    "noaa-2024-72259003927.json": "a62de6a28f6cf2c48d4109e9d1bde82a506eee5559d8ad70d4d4de3eba40f96d",
+    "noaa-2024-72530094846.json": "46e440401dfb32ccbfbe409b80bd296bbea65cce253f5776062a726b4bfd4ff6",
+    "noaa-2024-72565003017.json": "b641b25f0e37a73958395b71b12cb8af9a9d7182547e6fc48b1f06dae59c2ae2"
+  },
+  "feature_query": "SELECT * FROM airport_hour_features WHERE scheduled >= 3 AND target_rate IS NOT NULL ORDER BY cutoff, airport",
+  "target": "Share of scheduled departures in [cutoff, cutoff+2h) with departure delay >=15min or cancellation",
+  "minimum_scheduled": 3,
+  "severe_threshold": 0.4,
+  "target_overlap": "Hourly cutoffs have overlapping 2h targets; day-block comparisons used",
+  "splits": {
+    "tuning_train": [
+      "2024-01-01",
+      "2024-10-01"
+    ],
+    "tuning": [
+      "2024-10-01",
+      "2024-10-16"
+    ],
+    "final_train": [
+      "2024-01-01",
+      "2024-10-16"
+    ],
+    "calibration": [
+      "2024-10-16",
+      "2024-11-01"
+    ],
+    "test": [
+      "2024-11-01",
+      "2025-01-01"
+    ],
+    "purge_hours": 2,
+    "label_availability_filter": "Fit/selection only: target_available_at < partition end; scoring uses eventual observed labels; actual departures +1h, cancelled schedule +24h proxy"
+  },
+  "tuning": [
+    {
+      "parameters": {
+        "max_leaf_nodes": 15,
+        "l2_regularization": 2.0
+      },
+      "mae": 0.055962013087405074,
+      "seconds": 45.09977537498344
+    },
+    {
+      "parameters": {
+        "max_leaf_nodes": 31,
+        "l2_regularization": 10.0
+      },
+      "mae": 0.055737679901477606,
+      "seconds": 37.70075654203538
+    }
+  ],
+  "selected_parameters": {
+    "max_leaf_nodes": 31,
+    "l2_regularization": 10.0
+  },
+  "models": [
+    {
+      "name": "seasonal",
+      "split": "2024-11-01 to 2024-12-31",
+      "n": 4604,
+      "scheduled_denominator": 267832,
+      "mae": 0.13584139138881787,
+      "rmse": 0.17032535888116318,
+      "weighted_mae": 0.13223601430501886,
+      "bias": 0.07285569156090313,
+      "calibration_error": 0.07109982665369886,
+      "severe_event_count": 453,
+      "severe_recall": 0.39293598233995586,
+      "severe_precision": 0.24585635359116023,
+      "interval_coverage": 0.8757602085143353,
+      "mean_interval_width": 0.4536251094980944,
+      "fit_seconds_bundle": 13.833713208092377,
+      "prediction_seconds_bundle": 0.19357316696550697,
+      "fit_seconds": 0.015642583020962775,
+      "prediction_seconds": 0.0053143330151215196,
+      "runtime_seconds": 0.0053143330151215196,
+      "interval_radius": 0.24512534818941503
+    },
+    {
+      "name": "rolling",
+      "split": "2024-11-01 to 2024-12-31",
+      "n": 4604,
+      "scheduled_denominator": 267832,
+      "mae": 0.11248744167027677,
+      "rmse": 0.15901116917034155,
+      "weighted_mae": 0.10462050319672797,
+      "bias": -0.0017856386920933822,
+      "calibration_error": 0.022940124222667307,
+      "severe_event_count": 453,
+      "severe_recall": 0.04856512141280353,
+      "severe_precision": 0.30985915492957744,
+      "interval_coverage": 0.7293657688966116,
+      "mean_interval_width": 0.27188419902680855,
+      "fit_seconds_bundle": 13.833713208092377,
+      "prediction_seconds_bundle": 0.19357316696550697,
+      "fit_seconds": 0.0,
+      "prediction_seconds": 0.0015327079454436898,
+      "runtime_seconds": 0.0015327079454436898,
+      "interval_radius": 0.13942651528696587
+    },
+    {
+      "name": "tabular",
+      "split": "2024-11-01 to 2024-12-31",
+      "n": 4604,
+      "scheduled_denominator": 267832,
+      "mae": 0.07571299161979797,
+      "rmse": 0.10665205952671916,
+      "weighted_mae": 0.06952595004405351,
+      "bias": 0.008601224731622453,
+      "calibration_error": 0.008893395241847181,
+      "severe_event_count": 453,
+      "severe_recall": 0.5187637969094923,
+      "severe_precision": 0.7078313253012049,
+      "interval_coverage": 0.814509122502172,
+      "mean_interval_width": 0.2325677650643922,
+      "fit_seconds_bundle": 13.833713208092377,
+      "prediction_seconds_bundle": 0.19357316696550697,
+      "fit_seconds": 5.36644187499769,
+      "prediction_seconds": 0.07724508293904364,
+      "runtime_seconds": 0.07724508293904364,
+      "interval_radius": 0.12166326503626933
+    },
+    {
+      "name": "network_tabular",
+      "split": "2024-11-01 to 2024-12-31",
+      "n": 4604,
+      "scheduled_denominator": 267832,
+      "mae": 0.07584606203234934,
+      "rmse": 0.10630634518290012,
+      "weighted_mae": 0.06951833869495717,
+      "bias": 0.015382148982538202,
+      "calibration_error": 0.014247885276956222,
+      "severe_event_count": 453,
+      "severe_recall": 0.5584988962472406,
+      "severe_precision": 0.655440414507772,
+      "interval_coverage": 0.8116854908774979,
+      "mean_interval_width": 0.2317328170627235,
+      "fit_seconds_bundle": 13.833713208092377,
+      "prediction_seconds_bundle": 0.19357316696550697,
+      "fit_seconds": 4.384266583016142,
+      "prediction_seconds": 0.0847797499736771,
+      "runtime_seconds": 0.0847797499736771,
+      "interval_radius": 0.12078392997205833
+    },
+    {
+      "name": "graph_residual",
+      "split": "2024-11-01 to 2024-12-31",
+      "n": 4604,
+      "scheduled_denominator": 267832,
+      "mae": 0.07524782428416768,
+      "rmse": 0.10763064428565212,
+      "weighted_mae": 0.06948289623972262,
+      "bias": 0.002812672550433931,
+      "calibration_error": 0.014342638481483273,
+      "severe_event_count": 453,
+      "severe_recall": 0.5584988962472406,
+      "severe_precision": 0.6487179487179487,
+      "interval_coverage": 0.8160295395308428,
+      "mean_interval_width": 0.22515432363642637,
+      "fit_seconds_bundle": 13.833713208092377,
+      "prediction_seconds_bundle": 0.19357316696550697,
+      "fit_seconds": 9.426122957956977,
+      "prediction_seconds": 0.10190299991518259,
+      "runtime_seconds": 0.10190299991518259,
+      "interval_radius": 0.12151900154816153
+    }
+  ],
+  "rolling_origin": [
+    {
+      "train_end_exclusive": "2024-05-01",
+      "test_end_exclusive": "2024-06-01",
+      "train_n": 9079,
+      "test_n": 2369,
+      "runtime_seconds": 5.075989875011146,
+      "models": [
+        {
+          "name": "seasonal",
+          "n": 2369,
+          "scheduled_denominator": 147023,
+          "mae": 0.14928289386122764,
+          "rmse": 0.23318901066096764,
+          "weighted_mae": 0.14380581390414982,
+          "bias": -0.10483901768425762,
+          "calibration_error": 0.10729125173526942,
+          "severe_event_count": 689,
+          "severe_recall": 0.1567489114658926,
+          "severe_precision": 0.6352941176470588
+        },
+        {
+          "name": "rolling",
+          "n": 2369,
+          "scheduled_denominator": 147023,
+          "mae": 0.17181652392357716,
+          "rmse": 0.23100244422115027,
+          "weighted_mae": 0.16222304303908688,
+          "bias": -0.01688137391178348,
+          "calibration_error": 0.056092125475175676,
+          "severe_event_count": 689,
+          "severe_recall": 0.3483309143686502,
+          "severe_precision": 0.6091370558375635
+        },
+        {
+          "name": "tabular",
+          "n": 2369,
+          "scheduled_denominator": 147023,
+          "mae": 0.1013267691387809,
+          "rmse": 0.15478697956897075,
+          "weighted_mae": 0.09252924204880024,
+          "bias": -0.04121756390313785,
+          "calibration_error": 0.03974639142192072,
+          "severe_event_count": 689,
+          "severe_recall": 0.579100145137881,
+          "severe_precision": 0.8453389830508474
+        },
+        {
+          "name": "network_tabular",
+          "n": 2369,
+          "scheduled_denominator": 147023,
+          "mae": 0.10143443682838034,
+          "rmse": 0.15438376893751887,
+          "weighted_mae": 0.09249079638918438,
+          "bias": -0.037496359168792355,
+          "calibration_error": 0.03687682025818545,
+          "severe_event_count": 689,
+          "severe_recall": 0.602322206095791,
+          "severe_precision": 0.810546875
+        },
+        {
+          "name": "graph_residual",
+          "n": 2369,
+          "scheduled_denominator": 147023,
+          "mae": 0.1116256826997061,
+          "rmse": 0.16852844120322022,
+          "weighted_mae": 0.10234684336911797,
+          "bias": -0.0661613772222029,
+          "calibration_error": 0.06412560837136924,
+          "severe_event_count": 689,
+          "severe_recall": 0.47750362844702465,
+          "severe_precision": 0.8590078328981723
+        }
+      ]
+    },
+    {
+      "train_end_exclusive": "2024-07-01",
+      "test_end_exclusive": "2024-08-01",
+      "train_n": 13751,
+      "test_n": 2357,
+      "runtime_seconds": 4.575577207957394,
+      "models": [
+        {
+          "name": "seasonal",
+          "n": 2357,
+          "scheduled_denominator": 151189,
+          "mae": 0.16335014353294078,
+          "rmse": 0.2463487158549325,
+          "weighted_mae": 0.16512348507847135,
+          "bias": -0.11900796174195945,
+          "calibration_error": 0.1261627827285349,
+          "severe_event_count": 931,
+          "severe_recall": 0.32116004296455425,
+          "severe_precision": 0.803763440860215
+        },
+        {
+          "name": "rolling",
+          "n": 2357,
+          "scheduled_denominator": 151189,
+          "mae": 0.18530403127793857,
+          "rmse": 0.23583173610542282,
+          "weighted_mae": 0.18429887734407283,
+          "bias": -0.00968722393605025,
+          "calibration_error": 0.03686823781138623,
+          "severe_event_count": 931,
+          "severe_recall": 0.5284640171858217,
+          "severe_precision": 0.5478841870824054
+        },
+        {
+          "name": "tabular",
+          "n": 2357,
+          "scheduled_denominator": 151189,
+          "mae": 0.10363514438587261,
+          "rmse": 0.15085779301424476,
+          "weighted_mae": 0.10005325451369816,
+          "bias": -0.020750111786950364,
+          "calibration_error": 0.022835242171983808,
+          "severe_event_count": 931,
+          "severe_recall": 0.7303974221267454,
+          "severe_precision": 0.821256038647343
+        },
+        {
+          "name": "network_tabular",
+          "n": 2357,
+          "scheduled_denominator": 151189,
+          "mae": 0.10178116546404357,
+          "rmse": 0.14892986558046015,
+          "weighted_mae": 0.0983427556394045,
+          "bias": -0.019721601037856896,
+          "calibration_error": 0.024284188231095447,
+          "severe_event_count": 931,
+          "severe_recall": 0.7454350161117078,
+          "severe_precision": 0.8311377245508982
+        },
+        {
+          "name": "graph_residual",
+          "n": 2357,
+          "scheduled_denominator": 151189,
+          "mae": 0.10888420943172811,
+          "rmse": 0.15087790450025418,
+          "weighted_mae": 0.10481670626705533,
+          "bias": 0.027356766760930625,
+          "calibration_error": 0.025692645468991842,
+          "severe_event_count": 931,
+          "severe_recall": 0.849624060150376,
+          "severe_precision": 0.7664728682170543
+        }
+      ]
+    },
+    {
+      "train_end_exclusive": "2024-09-01",
+      "test_end_exclusive": "2024-10-01",
+      "train_n": 18524,
+      "test_n": 2286,
+      "runtime_seconds": 4.373561583925039,
+      "models": [
+        {
+          "name": "seasonal",
+          "n": 2286,
+          "scheduled_denominator": 139928,
+          "mae": 0.13289988448936857,
+          "rmse": 0.16322130921547495,
+          "weighted_mae": 0.1289349729671966,
+          "bias": 0.10668929812853498,
+          "calibration_error": 0.10344462894128165,
+          "severe_event_count": 103,
+          "severe_recall": 0.46601941747572817,
+          "severe_precision": 0.10983981693363844
+        },
+        {
+          "name": "rolling",
+          "n": 2286,
+          "scheduled_denominator": 139928,
+          "mae": 0.09243255873565286,
+          "rmse": 0.12530365419785133,
+          "weighted_mae": 0.08640681856718717,
+          "bias": 0.009760297578760528,
+          "calibration_error": 0.007944392202637141,
+          "severe_event_count": 103,
+          "severe_recall": 0.0,
+          "severe_precision": null
+        },
+        {
+          "name": "tabular",
+          "n": 2286,
+          "scheduled_denominator": 139928,
+          "mae": 0.0696639599286108,
+          "rmse": 0.09508547855937663,
+          "weighted_mae": 0.06323854239476213,
+          "bias": 0.028227506499132242,
+          "calibration_error": 0.027804267478691438,
+          "severe_event_count": 103,
+          "severe_recall": 0.5339805825242718,
+          "severe_precision": 0.3819444444444444
+        },
+        {
+          "name": "network_tabular",
+          "n": 2286,
+          "scheduled_denominator": 139928,
+          "mae": 0.06692232724419685,
+          "rmse": 0.0932229056746558,
+          "weighted_mae": 0.059966649264278554,
+          "bias": 0.021847441584921936,
+          "calibration_error": 0.01942149888565149,
+          "severe_event_count": 103,
+          "severe_recall": 0.4563106796116505,
+          "severe_precision": 0.3884297520661157
+        },
+        {
+          "name": "graph_residual",
+          "n": 2286,
+          "scheduled_denominator": 139928,
+          "mae": 0.06804433598827583,
+          "rmse": 0.09453161259292096,
+          "weighted_mae": 0.062313239082784154,
+          "bias": 0.018705084548600513,
+          "calibration_error": 0.02393645516371561,
+          "severe_event_count": 103,
+          "severe_recall": 0.5145631067961165,
+          "severe_precision": 0.39552238805970147
+        }
+      ]
+    }
+  ],
+  "network_contribution": {
+    "comparison": "network_tabular minus tabular MAE; negative favors network",
+    "paired_airport_days": 244,
+    "mean_daily_mae_difference": 9.79894293663928e-05,
+    "bootstrap_95_interval": [
+      -0.0009486043953912426,
+      0.001103409236718581
+    ],
+    "bootstrap_seed": 42,
+    "limitations": "Airport-days remain correlated across hubs. Descriptive uncertainty, not a causal test."
+  },
+  "features": [
+    "airport",
+    "recent_departures",
+    "recent_stress",
+    "recent_mean_delay",
+    "prior_day_rate",
+    "prior_week_rate",
+    "rolling_rate",
+    "scheduled_next",
+    "wind_speed",
+    "visibility",
+    "temperature",
+    "weather_age_hours",
+    "hour",
+    "dow",
+    "month"
+  ],
+  "network_features": [
+    "airport",
+    "recent_departures",
+    "recent_stress",
+    "recent_mean_delay",
+    "prior_day_rate",
+    "prior_week_rate",
+    "rolling_rate",
+    "scheduled_next",
+    "wind_speed",
+    "visibility",
+    "temperature",
+    "weather_age_hours",
+    "hour",
+    "dow",
+    "month",
+    "neighbor_stress"
+  ],
+  "graph_features": [
+    "recent_stress",
+    "prior_day_rate",
+    "prior_week_rate",
+    "rolling_rate",
+    "neighbor_stress",
+    "scheduled_next",
+    "hour",
+    "dow"
+  ],
+  "graph_residual_training": {
+    "inner_boundary": "2024-07-07T15:00:00",
+    "early_n": 14254,
+    "residual_n": 7695,
+    "ridge_alpha": 100.0
+  },
+  "versions": {
+    "python": "3.12.13",
+    "sklearn": "1.9.1",
+    "thread_limit": 4
+  },
+  "availability_assumptions": [
+    "Final reported BTS schedules proxy schedules known at cutoff; no historical schedule revisions are available.",
+    "BTS actual departure events are assumed available one hour after occurrence, although BTS publishes retrospectively.",
+    "NOAA observation timestamps plus a declared latency proxy availability; ingestion timestamps are not supplied by the archive.",
+    "No delay-cause fields, realized future weather, future actual aircraft assignments, or arrival outcomes are model features.",
+    "Training/tuning/calibration labels must be available before each boundary. Departure labels use actual departure+1h; cancellation availability uses an explicitly hypothetical schedule+24h proxy because BTS has no cancellation announcement timestamps. Labels still unavailable at fit/selection boundaries are excluded from those partitions. Final and rolling-origin test scores use eventual observed labels, retaining severe late outcomes."
+  ],
+  "calibration": "Symmetric 90% split-conformal absolute residual intervals from Oct16\u201331; temporal shift may invalidate nominal coverage."
+}

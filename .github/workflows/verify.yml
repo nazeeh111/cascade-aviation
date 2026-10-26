@@ -1,0 +1,14 @@
+name: Rebuild real-data quickstart
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.11.20'
+      - run: uv sync --locked --extra test --python 3.12
+      - run: uv run pytest -q
+      - run: uv run cascade quickstart
+      - run: node --check app/app.js

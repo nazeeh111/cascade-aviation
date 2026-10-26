@@ -1,0 +1,165 @@
+{
+  "monthly_reconciliation": [
+    {
+      "month": 1,
+      "source_rows": 547271,
+      "selected_rows": 124283,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 2,
+      "source_rows": 519221,
+      "selected_rows": 118921,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 3,
+      "source_rows": 591767,
+      "selected_rows": 136251,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 4,
+      "source_rows": 582185,
+      "selected_rows": 132968,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 5,
+      "source_rows": 609743,
+      "selected_rows": 142415,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 6,
+      "source_rows": 611132,
+      "selected_rows": 141486,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 7,
+      "source_rows": 634613,
+      "selected_rows": 146146,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 8,
+      "source_rows": 619025,
+      "selected_rows": 141844,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 9,
+      "source_rows": 582622,
+      "selected_rows": 135455,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 10,
+      "source_rows": 615497,
+      "selected_rows": 141301,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 11,
+      "source_rows": 575404,
+      "selected_rows": 127959,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    },
+    {
+      "month": 12,
+      "source_rows": 590581,
+      "selected_rows": 130391,
+      "counts_and_sums": "exact match",
+      "sha256": "match"
+    }
+  ],
+  "checks": {
+    "scope_violations": 0,
+    "invalid_status_flags": 0,
+    "scheduled_key_duplicate_rows": 0,
+    "missing_metadata_endpoints": 0,
+    "airport_metadata_duplicate_codes": 0,
+    "invalid_scheduled_hhmm": 0,
+    "early_departures_preserved": 881126,
+    "null_arrival_delays_preserved": 24539,
+    "weather_source_rows": 54368,
+    "weather_duplicate_timestamp_excess": 93
+  },
+  "resume_seconds": 0.285,
+  "resume_downloads": 0,
+  "refresh_recovery_evidence": {
+    "flights": "prior selected bytes recovered and read; new selected delay differs",
+    "weather": "prior selected bytes recovered and read; new temperature differs",
+    "airports": "prior selected bytes recovered and read; new metadata differs",
+    "dirty_local_protection": "refresh rejected a changed local partition before replacement"
+  },
+  "initial_ingestion": {
+    "cache_path": "/tmp/cascade-source-cache",
+    "completed_at": "2026-10-26T02:02:41.585770+00:00",
+    "flight_selected_rows": 1619420,
+    "flight_source_rows": 7079061,
+    "months": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "scope_airports": [
+      "ATL",
+      "ORD",
+      "DFW",
+      "DEN"
+    ],
+    "scope_carriers": [
+      "AA",
+      "DL",
+      "UA",
+      "WN"
+    ],
+    "seconds": 478.291,
+    "selected_parquet_bytes": 23150112,
+    "snapshots": [
+      "bts-2024-01-fe089b45523f",
+      "bts-2024-02-8463683d1005",
+      "bts-2024-03-e2c5021406f4",
+      "bts-2024-04-d8b1e88626a7",
+      "bts-2024-05-03e4ae26c2d1",
+      "bts-2024-07-4d992fee1341",
+      "bts-2024-06-4f329439fd68",
+      "bts-2024-08-58d651379af9",
+      "bts-2024-09-c0df7503b005",
+      "bts-2024-10-a417136d6c16",
+      "noaa-2024-72219013874-cc2d1ce4b120",
+      "noaa-2024-72530094846-1f21901ce999",
+      "noaa-2024-72259003927-acec0cb05e22",
+      "noaa-2024-72565003017-74c90ee0f7d8",
+      "9387cdb38df5",
+      "bts-2024-12-a324577aa76d",
+      "bts-2024-11-26b6e89e7c1f"
+    ],
+    "source_bytes": 388161647,
+    "year": 2024,
+    "benchmark_state": "Mixed cache: January ZIP predownloaded; weather and metadata built in parallel. Not a fully cold source-download benchmark."
+  },
+  "source_csv_uncompressed_bytes": 3201887863
+}
