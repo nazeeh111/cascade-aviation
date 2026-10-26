@@ -10,3 +10,6 @@ dbt/logs/
 artifacts/*.joblib
 work/
 .DS_Store
+
+dist/
+dist-stage-*/
