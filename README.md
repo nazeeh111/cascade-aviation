@@ -1,8 +1,8 @@
-# CASCADE
+# Cascade
 
 **Trace disruption. Test a forecast. Bound the recovery claim.**
 
-CASCADE is a reproducible, SQL-first aviation research system built on actual 2024 BTS flight reports and NOAA weather. It links source snapshots to a tested DuckDB/dbt warehouse, a SQL investigation, chronological two-hour forecasts, a compact graph residual comparison, and a bounded hypothetical recovery sandbox.
+Cascade is a reproducible, SQL-first aviation research system built on actual 2024 BTS flight reports and NOAA weather. It links source snapshots to a tested DuckDB/dbt warehouse, a SQL investigation, chronological two-hour forecasts, a compact graph residual comparison, and a bounded hypothetical recovery sandbox.
 
 [Public replay](https://cascade-aviation-replay.nazeeh1.chatgpt.site) · [SQL investigation](artifacts/investigation.html) · [Model protocol](docs/model-card.md) · [Scenario assumptions](docs/simulator.md) · [Source dictionaries and methods](docs/sources.md)
 
